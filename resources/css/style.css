@@ -24,3 +24,14 @@
 
   box-shadow: 10px 10px 5px lightgrey;
 }
+
+body{
+background-color: #EEF8FF;
+}
+
+header{
+  background-image: url(https://cdn.pixabay.com/photo/2019/03/09/13/31/email-4044165_1280.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
