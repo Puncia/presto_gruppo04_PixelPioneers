@@ -19,4 +19,4 @@ Route::get('/', function () {
 })->name('welcome');
 
 //Rotta per la creazione di un nuovo annuncio
-Route::get('/nuovo/annuncio', [AnnouncementController::class, 'createAnnouncement'])->name('announcements.create');
+Route::get('/nuovo/annuncio', [AnnouncementController::class, 'createAnnouncement'])->name('announcements.create')->middleware('auth');
