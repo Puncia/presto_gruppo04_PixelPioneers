@@ -7,7 +7,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $announcement->title }}</h5>
                         <p class="card-text">{{ $announcement->body }}</p>
-                        <p href="" class="btn btn-primary shadow">Visualizza</a>
+                        <p class="card-text">{{ $announcement->price }}</p>
                         <p class="card-footer my-2">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}
                             Autore: {{ $announcement->user->name ?? '' }}</p>
                         <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}">Categoria:

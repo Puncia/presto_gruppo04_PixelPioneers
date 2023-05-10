@@ -20,6 +20,12 @@ Route::get('/', [FrontController::class, 'welcome'])->name('welcome');
 
 //Rotta per la creazione di un nuovo annuncio
 Route::get('/nuovo/annuncio', [AnnouncementController::class, 'createAnnouncement'])->name('announcements.create')->middleware('auth');
+
+//Rotta delle categorie
 Route::get('/categoria/{category}', [FrontController::class, 'categoryShow'])->name('categoryShow');
 
+//Rotta per il dettaglio del singolo annuncio 
 Route::get('/dettaglio/annuncio/{announcement}', [AnnouncementController::class, 'showAnnouncement'])->name('announcements.show');
+
+//Rotta per vedere tutti gli annunci
+Route::get('/tutti/annunci', [AnnouncementController::class, 'indexAnnouncement'])->name('announcements.index');

@@ -39,7 +39,7 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="">Tutti gli annunci</a>
+                        <a class="nav-link" href="{{ route('announcements.index') }}">Tutti gli annunci</a>
                     </li>
 
                     <li class="nav-item">
