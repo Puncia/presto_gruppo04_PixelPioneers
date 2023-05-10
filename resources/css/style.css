@@ -1,0 +1,26 @@
+
+.btn_custom{
+  
+  background-color:#4D5382 ;
+
+  border-radius: 30px !important;
+
+}
+
+
+.bg_blu{
+  
+  background-color:#658E9C;
+
+
+}
+
+.nav_custom{
+  
+  border-radius: 0px 
+  0px 
+  20px 
+  20px;
+
+  box-shadow: 10px 10px 5px lightgrey;
+}

@@ -1,0 +1,49 @@
+<nav class="nav_custom navbar navbar-expand-lg bg-body-tertiary bg_blu">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Presto.it</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
+          </li>
+
+
+
+          @guest
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('login')}}">Accedi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('register')}}">Registrati</a>
+          </li>
+
+          @else
+
+          <li class="nav-item">
+            <a class="nav-link" href="">il tuo profilo</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="">Tutti gli annunci</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="">Inserisci album</a>
+          </li>
+
+          <div class="nav-link" id="nav-bar-logoutbutton">
+            <form method="POST" action="">
+                @csrf
+                <button class="btn btn-light" type="submit">Logout</button>
+            </form>
+        </div>
+          @endguest
+
+        </ul>
+      </div>
+    </div>
+  </nav>
