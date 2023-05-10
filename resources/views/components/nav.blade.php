@@ -1,6 +1,6 @@
 <nav class="nav_custom navbar navbar-expand-lg bg-body-tertiary bg_blu">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Presto.it</a>
+        <a class="navbar-brand" href="{{ route('welcome') }}"><img class="logo" src="https://i.imgur.com/Yj3smKy.png" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
