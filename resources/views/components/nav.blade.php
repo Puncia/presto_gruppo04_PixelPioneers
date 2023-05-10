@@ -32,14 +32,15 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="">Inserisci album</a>
+          <a class="nav-link" href="{{route('announcements.create')}}">Inserisci annuncio</a>
         </li>
 
         <a class="nav-link" href="{{ route('logout')}}" onclick="event.preventDefault(); 
                     document.getElementById('logout-form').submit();">Logout</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
           @csrf
-          @endguest
+        </form>
+        @endguest
 
       </ul>
     </div>
