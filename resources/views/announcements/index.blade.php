@@ -19,6 +19,7 @@
                     </div>
                 </div>
             @endforeach
+            {{ $announcements->links() }}
         </div>
     </div>
 </x-layout>
