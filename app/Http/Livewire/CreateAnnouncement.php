@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Announcement;
+use App\Models\Category;
 use Livewire\Component;
 
 class CreateAnnouncement extends Component
@@ -10,10 +11,12 @@ class CreateAnnouncement extends Component
     public $title;
     public $body;
     public $price;
+    public $category;
 
     protected $rules = [
         'title' => 'required',
         'body' => 'required',
+        'category' => 'required',
         'price' => 'required|numeric'
     ];
 
@@ -21,14 +24,14 @@ class CreateAnnouncement extends Component
         'required' => 'Il campo è richiesto',
         'min' => 'Il campo :attribute è troppo corto',
         'numeric' => 'Il campo :attribute dev\'essere un numero',
-
     ];
 
     public function store()
     {
         $this->validate();
 
-        Announcement::create([
+        $category = Category::find($this->category);
+        $category->announcements()->create([
             'title' => $this->title,
             'body' => $this->body,
             'price' => $this->price,
