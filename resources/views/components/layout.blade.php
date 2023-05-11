@@ -17,6 +17,7 @@
     {{ $slot }}
     @livewireScripts
     <script src="{{asset('js/app.js')}}"></script>
+    <x-footer />
 </body>
 
 </html>

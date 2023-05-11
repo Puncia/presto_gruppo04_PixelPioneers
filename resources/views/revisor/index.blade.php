@@ -8,6 +8,11 @@
             </div>
         </div>
     </div>
+    @if(session()->has('message'))
+    <div class="bg-danger">
+        {{session()->get('message')}}
+    </div>
+    @endif
     @if ($announcement_to_check)
         <div class="container">
             <div class="row">
