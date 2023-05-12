@@ -1,9 +1,9 @@
 <x-layout>
 
-    @if(session()->has('access.denied'))
-    <div class="bg-danger">
-        {{session()->get('access.denied')}}
-    </div>
+    @if (session()->has('access.denied'))
+        <div class="bg-danger">
+            {{ session()->get('access.denied') }}
+        </div>
     @endif
 
     @if (session()->has('message'))
@@ -12,48 +12,62 @@
         </div>
     @endif
 
-    <header class="vh-100">
-        <div class="container my-5 py-5">
-            <div class="row  d-flex justify-content-start">
-                <div class="col-6 col-md-4">
-                    <div class="">
-                        <h1 class="display-3 mb-3">Benvenuti sul nostro e-commerce</h1>
-                        <p class="">Qui puoi vendere e comprare tutto e di più</p>
-                    </div>
-                </div>
+<div class="container">
+    
+    <div class="row text-center m-5">
+<p class="border-bottom p-3">Cogli l'opportunità che hai sempre cercato!</p>
+<h1 class="fs-1">Benvenuti nel nostro e-commerce</h1>
+</div>
+    <div class="col-12 vh-100">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-        </div>
-    </header>
-
-    {{-- <div class="row">
-            <div class="col-12">
-                <div id="carouselExample" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://picsum.photos/200/300?grayscale" class="d-block" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/200/300?grayscale" class="d-block" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/200/300?grayscale" class="d-block " alt="...">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="https://media.discordapp.net/attachments/1076537573897408683/1106537980488851536/iphone.png?width=483&height=580" class="" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Iphone</h5>
+                  <p>per ogni utente</p>
                 </div>
-                <div class="conteiner"></div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://media.discordapp.net/attachments/1076537573897408683/1106537980937637948/cassabl.png?width=483&height=580" class="" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Sony</h5>
+                  <p>Suono potente</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://media.discordapp.net/attachments/1076537573897408683/1106537980119756840/cuffie.png?width=483&height=580" class="" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Marshall</h5>
+                  <p>Musica per le tue maratone per strada</p>
+                </div>
+              </div>
             </div>
-        </div> --}}
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+</div>
+</div>
 
+
+
+
+
+
+
+
+    
     <div class="container-fluid ">
         <div class="row">
             @foreach ($announcements as $announcement)
@@ -74,7 +88,7 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+            @endforeach
         </div>
     </div>
 </x-layout>

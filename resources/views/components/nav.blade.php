@@ -13,19 +13,23 @@
                 </li>
                 <div class="dropdown">
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Cambia lingua
+                        Multilingua
                     </button>
                     <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">
-                    <img width="48" height="48" src="https://img.icons8.com/color/48/great-britain.png" alt="great-britain"/>
-                    Inglese</a></li>
-                <li><a class="dropdown-item" href="#">
-                    <img width="48" height="48" src="https://img.icons8.com/color/48/spain.png" alt="spain"/>
-                    Spagnolo</a></li>
-                <li><a class="dropdown-item" href="#">
-                    <img width="48" height="48" src="https://img.icons8.com/color/48/italy.png" alt="italy"/>
-                    Italiano</a></li>
-              </ul>
+                        <li><a class="dropdown-item" href="#">
+                                <img width="48" height="48" src="https://img.icons8.com/color/48/italy.png"
+                                    alt="italy" />
+                                Italiano</a></li>
+                        <li><a class="dropdown-item" href="#">
+                                <img width="48" height="48"
+                                    src="https://img.icons8.com/color/48/great-britain.png" alt="great-britain" />
+                                Inglese</a></li>
+                        <li><a class="dropdown-item" href="#">
+                                <img width="48" height="48" src="https://img.icons8.com/color/48/spain.png"
+                                    alt="spain" />
+                                Spagnolo</a></li>
+
+                    </ul>
                 </div>
 
                 <div class="dropdown">
@@ -48,10 +52,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('register') }}">Registrati</a>
                     </li>
-
                 @else
                     <li class="nav-item">
-                        <a class="nav-link" href="">Il tuo profilo</a>
+                        <a class="nav-link" href="">Ciao, {{Auth::user()->name}}<img width="25" height="25" src="https://img.icons8.com/ios/50/salute.png" alt="salute"/></a>
                     </li>
 
 
@@ -86,7 +89,7 @@
                     </form>
                 @endguest
             </ul>
-            
+
         </div>
     </div>
 </nav>
