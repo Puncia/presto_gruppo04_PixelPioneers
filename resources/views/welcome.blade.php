@@ -6,6 +6,12 @@
     </div>
     @endif
 
+    @if (session()->has('message'))
+        <div class="class-flex flex-row justify-center my-2 alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
+
     <header class="vh-100">
         <div class="container my-5 py-5">
             <div class="row  d-flex justify-content-start">
