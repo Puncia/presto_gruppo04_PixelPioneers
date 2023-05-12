@@ -15,8 +15,8 @@
 <div class="container-fluid">
     
     <div class="row text-center m-5">
-<p class="border-bottom p-3">Cogli l'opportunità che hai sempre cercato!</p>
-<h1 class="fs-1">Benvenuti nel nostro e-commerce</h1>
+<p class="border-bottom p-3 f2 tx-sec text_shadow">Cogli l'opportunità che hai sempre cercato!</p>
+<h1 class="fs-1 f1">Benvenuti nel nostro e-commerce</h1>
 </div>
     <div class="col-12 vh-100">
         <div id="carouselExampleDark" class="carousel carousel-dark slide">
