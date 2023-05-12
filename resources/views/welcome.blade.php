@@ -12,7 +12,7 @@
         </div>
     @endif
 
-<div class="container">
+<div class="container-fluid">
     
     <div class="row text-center m-5">
 <p class="border-bottom p-3">Cogli l'opportunità che hai sempre cercato!</p>
@@ -27,24 +27,24 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="10000">
-                <img src="https://media.discordapp.net/attachments/1076537573897408683/1106537980488851536/iphone.png?width=483&height=580" class="" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Iphone</h5>
+                <img src="https://assets.swappie.com/cdn-cgi/image/width=600,height=600,fit=contain,format=auto/swappie-iphone-14-red-back.png?v=34" class="immaginecarosello" alt="...">
+                <div class="carousel-caption   text-align-last: justify;">
+                  <h5>- IPHONE -</h5>
                   <p>per ogni utente</p>
                 </div>
               </div>
               <div class="carousel-item" data-bs-interval="2000">
-                <img src="https://media.discordapp.net/attachments/1076537573897408683/1106537980937637948/cassabl.png?width=483&height=580" class="" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Sony</h5>
+                <img src="https://helpguide.sony.net/speaker/srs-xb12/v1/it/contents/image/SRS_XB12_Black_front_up-Large.png" class="immaginecarosello" alt="...">
+                <div class="carousel-caption   text-align-last: justify;">
+                  <h5>- SONY -</h5>
                   <p>Suono potente</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="https://media.discordapp.net/attachments/1076537573897408683/1106537980119756840/cuffie.png?width=483&height=580" class="" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Marshall</h5>
-                  <p>Musica per le tue maratone per strada</p>
+                <img src=https://depieri.com/wp-content/uploads/2019/04/a1blu_2.png" class="immaginecarosello" alt="...">
+                <div class="carousel-caption   text-align-last: justify;">
+                  <h5> - AUDI -</h5>
+                  <p>Auto grintosa e sportiva</p>
                 </div>
               </div>
             </div>
