@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\User;
 use App\Mail\BecomeRevisor;
 use App\Models\Announcement;
@@ -10,8 +11,21 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Artisan;
 
+
+
+
+
+
 class RevisorController extends Controller
-{
+
+{public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('isRevisor')->except('becomeRevisor','makeRevisor');
+    }
+
+
+    
     public function index(){
         
         $announcement_to_check = Announcement::where('is_accepted', null)->first();
