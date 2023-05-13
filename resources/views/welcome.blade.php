@@ -29,21 +29,21 @@
               <div class="carousel-item active" data-bs-interval="10000">
                 <img src="https://assets.swappie.com/cdn-cgi/image/width=600,height=600,fit=contain,format=auto/swappie-iphone-14-red-back.png?v=34" class="immaginecarosello" alt="...">
                 <div class="carousel-caption   text-align-last: justify;">
-                  <h5>- IPHONE -</h5>
+                  <h5>- IPHONE 14 -</h5>
                   <p>per ogni utente</p>
                 </div>
               </div>
               <div class="carousel-item" data-bs-interval="2000">
                 <img src="https://helpguide.sony.net/speaker/srs-xb12/v1/it/contents/image/SRS_XB12_Black_front_up-Large.png" class="immaginecarosello" alt="...">
                 <div class="carousel-caption   text-align-last: justify;">
-                  <h5>- SONY -</h5>
+                  <h5>- SONY SRS-XB13  -</h5>
                   <p>Suono potente</p>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src=https://depieri.com/wp-content/uploads/2019/04/a1blu_2.png" class="immaginecarosello" alt="...">
                 <div class="carousel-caption   text-align-last: justify;">
-                  <h5> - AUDI -</h5>
+                  <h5> - AUDI A1 -</h5>
                   <p>Auto grintosa e sportiva</p>
                 </div>
               </div>

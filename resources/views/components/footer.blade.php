@@ -13,7 +13,7 @@
                     <p>Vuoi lavorare con noi?</p>
                 </div>
                 <div class="pt-0 m-0 f1">
-                    <p>Registrati subito per diventare un revisore:</p>
+                    <p>Registrati subito per diventare un revisor:</p>
                 </div>
 
                 <a href="{{ route('become.revisor') }}"class="f1 text-decoration-none text-black">Clicca qui</a>
@@ -21,7 +21,7 @@
 
         </div>
         <div class="col-4">
-            <h2 class="f1 text-center">
+            <h2 class="f1 text-center fs-4">
                 <img width="35" height="35" src="https://img.icons8.com/flat-round/64/question-mark.png"
                     alt="question-mark" />
                 Faq e contatti:
@@ -37,7 +37,7 @@
                     alt="instagram-new" />
             </div>
             <div class="">
-                <h3 class="f1 text-center">
+                <h3 class="f1 text-center fs-4">
                     Modalità di pagamento:
                 </h3>
 
