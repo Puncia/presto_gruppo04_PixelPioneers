@@ -67,6 +67,8 @@
         </div>
     </div>
     {{-- ANNUNCI --}}
+
+    <h1 class="fs-1 f1 text-center m-5 ">Ultimi inseriti:</h1>
     <div class="container-fluid">
         <div class="row ">
             @foreach ($announcements as $announcement)
@@ -83,7 +85,7 @@
                                 {{ $announcement->category->name }}</a>
                             <p class="card-footer">Pubblicato il:
                                 {{ $announcement->created_at->format('d/m/Y H:m') }}
-                            </p>
+                            </p> 
                         </div>
                     </div>
                 </div>
