@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid">
+    <div class="container-fluid m-5">
         <div class="row">
             <div class="col-6">
                 <h1 class="text-center f1">Sei su Presto.it</h1>
@@ -30,7 +30,7 @@
                                     <input type="password" class="form-control" id="exampleInputPassword1"
                                         name="password">
                                 </div>
-                                <button type="submit" class="btn_custom btn text-center">Log in</button>
+                                <button type="submit" class="btn_custom btn text-light">Log in</button>
                             </form>
                         </div>
                 
