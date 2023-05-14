@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="class col-12">
+    <div class="class col-8 ">
         <div class="row">
             @foreach ($announcements as $announcement)
                 <div class="class col-12 col-md-4 my-4">

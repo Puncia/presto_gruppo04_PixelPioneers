@@ -68,18 +68,7 @@
             {{-- </div> --}}
 
             {{-- <div class="col-4"> --}}
-                <div class="dropdown">
-                        <button class="btn dropdown-toggle float-end text-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Categorie
-                        </button>
-                        <ul class="dropdown-menu">
-                            @foreach ($categories as $category)
-                                <li><a class="dropdown-item"
-                                        href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
+              
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('announcements.create') }}">Inserisci annuncio</a>

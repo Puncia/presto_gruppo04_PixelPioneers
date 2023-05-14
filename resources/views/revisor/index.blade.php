@@ -1,9 +1,9 @@
 <x-layout>
-    <div class="container">
+    <div class="container-fluid m-5">
         <div class="row">
-            <div class="col-12">
+            <div class="col-6 text-center f1">
                 <h1>
-                    {{ $announcement_to_check ? 'Ecco l\'annuncio da ravisionare' : 'Non ci sono annunci da revisionare' }}
+                    {{ $announcement_to_check ? 'Ecco l\'annuncio da revisionare:' : 'Non ci sono annunci da revisionare' }}
                 </h1>
             </div>
         </div>
@@ -21,13 +21,13 @@
                     <div id="carouselExample" class="carousel slide">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://picsum.photos/200" class="d-block w-100" alt="...">
+                                <img src="https://picsum.photos/200" class="d-block w-50" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://picsum.photos/200" class="d-block w-100" alt="...">
+                                <img src="https://picsum.photos/200" class="d-block w-50" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://picsum.photos/200" class="d-block w-100" alt="...">
+                                <img src="https://picsum.photos/200" class="d-block w-50" alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
@@ -54,7 +54,7 @@
                     method="POST">
                     @csrf
                     @method('PATCH')
-                    <button type="submit" class="btn btn-success shadow">Accetta</button>
+                 <button type="submit" class="mt-3 btn_custom btn text-light">Accetta</button></div>
                 </form>
             </div>
             <div class="col-12 col-md-6 text-end">
@@ -62,7 +62,7 @@
                     method="POST">
                     @csrf
                     @method('PATCH')
-                    <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
+                    <button type="submit" class=" btn_custom btn text-light">Rifiuta</button></div>
                 </form>
             </div>
         </div>
