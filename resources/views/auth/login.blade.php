@@ -18,15 +18,14 @@
                             <form class="mb-5" method='POST' action={{ route('login') }}>
                                 @csrf
                                 <div class="mb-3">
-                                    <img src="https://img.icons8.com/color/48/null/new-post.png" />
-                                    <label for="exampleInputPassword1" class="form-label">Email</label>
+                                    <img width="30" height="30"  src="https://img.icons8.com/ios/50/new-post--v1.png"/>
+                                    <label for="exampleInputPassword1" class=" mb-3 form-label">Email</label>
                                     <input type="email" class="form-control" id="exampleInputPassword1"
                                         name="email">
                                 </div>
                                 <div class="mb-3">
-                                    <img
-                                        src="https://img.icons8.com/external-others-inmotus-design/67/null/external-Lock-round-icons-others-inmotus-design.png" />
-                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <img width="30" height="30"  src="https://img.icons8.com/ios/50/password--v1.png" alt=""/>
+                                    <label for="exampleInputPassword1" class="mb-3 form-label">Password</label>
                                     <input type="password" class="form-control" id="exampleInputPassword1"
                                         name="password">
                                 </div>

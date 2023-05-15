@@ -1,5 +1,5 @@
 <nav class="nav_custom navbar navbar-expand-lg bg-body-tertiary bg_blu">
-    <div class="container-fluid justify-content">
+    <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('welcome') }}"><img class="logo" src="{{ asset('images/logo.png') }}"
                 alt="logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -9,7 +9,7 @@
         {{-- <div class="row">
             <div class="col-8 bg-info"> --}}
 
-        <div class="collapse navbar-collapse " id="navbarNav">
+        <div class="collapse navbar-collapse  d-flex justify-content-start" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">Home</a>
@@ -84,24 +84,29 @@
                     </form>
                 @endguest
             </ul>
-            <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Categorie
-                </button>
-                <ul class="dropdown-menu">
-                    @foreach ($categories as $category)
-                        <li><a class="dropdown-item"
-                                href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
-                        </li>
-                    @endforeach
-                </ul>
-                <form action="{{ route('announcements.search') }}" method="GET" class="d-flex">
-                    <input type="search" name="searched" class="form-control me-2" placeholder="Search"
-                        aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
+          
+ 
+
+    </div>
+    <div class="d-flex justify-content-end">
+        <form action="{{ route('announcements.search') }}" method="GET" class="d-flex">
+            <input type="search" name="searched" class="form-control search" placeholder="Search" aria-label="Search">
+            <button class="m-2 btn_custom btn text-light" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+    <div class="dropdown mx-5">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorie
+        </button>
+        <ul class="dropdown-menu">
+            @foreach ($categories as $category)
+                <li><a class="dropdown-item"
+                        href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
+                </li>
+            @endforeach
+        </ul>
+
     </div>
     {{-- </div> --}}
 

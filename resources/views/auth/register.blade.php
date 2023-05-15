@@ -21,23 +21,27 @@
                         <form method='POST' action={{ route('register') }}>
                             @csrf
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Username</label>
+                                <img width="30" height="30" src="https://img.icons8.com/ios/50/username.png" 
+                                <label for="exampleInputEmail1" class="mb-3 form-label">Username</label>
                                 <input type="text" class="form-control " id="exampleInputEmail1" name="name">
 
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Email</label>
+                                <img width="30" height="30"  src="https://img.icons8.com/ios/50/new-post--v1.png"/>
+                                <label for="exampleInputPassword1" class="mb-3 form-label">Email</label>
                                 <input type="email" class="form-control" id="exampleInputPassword1" name="email">
                             </div>
 
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <img width="30" height="30"  src="https://img.icons8.com/ios/50/password--v1.png" alt=""/>
+                                <label for="exampleInputPassword1" class="mb-3 form-label">Password</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1" name="password">
                             </div>
 
 
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Conferma password</label>
+                                <img width="30" height="30" src="https://img.icons8.com/small/64/good-pincode.png" alt="good-pincode"/>
+                                <label for="exampleInputPassword1" class="mb-3 form-label">Conferma password</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1"
                                     name="password_confirmation">
                             </div>
