@@ -1,4 +1,4 @@
-<div class="container-fluid tot">
+<div class="container-fluid tot" id="nav">
     {{-- DX --}}
     <div class="row py-2">
         <div class="col-4">
@@ -41,8 +41,10 @@
                     Modalità di pagamento:
                 </h3>
                 <div class="text-center border-bottom py-2 mb-2">
-                    <img width="48" height="48" src="https://img.icons8.com/office/40/mastercard.png" alt="mastercard"/>
-                    <img width="48" height="48" src="https://img.icons8.com/officel/40/visa.png" alt="visa"/>
+                    <img width="48" height="48" src="https://img.icons8.com/office/40/mastercard.png"
+                        alt="mastercard" />
+                    <img width="48" height="48" src="https://img.icons8.com/officel/40/visa.png"
+                        alt="visa" />
                 </div>
             </div>
         </div>

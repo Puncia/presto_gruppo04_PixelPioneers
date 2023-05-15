@@ -1,39 +1,44 @@
-
-.f1{
+.f1 {
   font-family: 'Montserrat Alternates';
 }
-.f2{
-  font-family: sans-serif ;
+
+.f2 {
+  font-family: sans-serif;
 }
+
 /* palette dei colori */
-:root{
-  --tot-c:#EEF8FF; 
-  --main-c:#658E9C;
+:root {
+  --tot-c: #EEF8FF;
+  --main-c: #658E9C;
   --sec-c: #4D5382;
 }
+
 /* classi font e bottoni */
-.tx-sec{
+.tx-sec {
   color: var(--sec-c);
 }
-.text_shadow{
+
+.text_shadow {
   text-shadow: 1px 1px #1413133f;
 }
-.tot{
+
+.tot {
   /* background-color: var(--main-c); */
   background-color: var(--main-c);
   opacity: 0.8;
 }
-.btn_custom{
-  
-  background-color:#4D5382 ;
+
+.btn_custom {
+
+  background-color: #4D5382;
 
   border-radius: 30px !important;
 
 }
 
-.bg_blu{
-  
-  background-color:#658E9C;
+.bg_blu {
+
+  background-color: #658E9C;
 
 
 }
@@ -42,21 +47,25 @@
   width: 125px;
 }
 
-.nav_custom{
-  
-  border-radius: 0px 
-  0px 
-  20px 
-  20px;
+.nav_custom {
+
+  border-radius: 0px 0px 20px 20px;
 
   box-shadow: 10px 10px 5px lightgrey;
 }
 
-body{
-background-color: #EEF8FF;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #EEF8FF;
 }
 
-.quote{
+#nav {
+  margin-top: auto;
+}
+
+.quote {
   width: 100px;
 }
 
@@ -64,8 +73,8 @@ background-color: #EEF8FF;
   height: 100%;
 }
 
-.search{width: 170px;
+.search {
+  width: 170px;
   height: 50px;
 
 }
-
