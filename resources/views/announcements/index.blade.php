@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="class col-12 d-flex">
             <div class="row d-flex justify-content-evenly">
-                @foreach ($announcements as $announcement)
+                @forelse ($announcements as $announcement)
                     <div class="class col-12 col-md-4 my-5 d-flex justify-content-center">
                         <div class="card shadow" style="width: 18rem;">
                             <img src="https://picsum.photos/200" class="card-img-top p-3 rounded">
@@ -19,7 +19,13 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="col-12">
+                        <div class="alert alert-warning py-3 shadow">
+                            <p class="lead"> Non ci sono annunci per questa ricerca. Prova a cambiarla!</p>
+                        </div>
+                    </div>
+                @endforelse
                 {{ $announcements->links() }}
             </div>
         </div>
