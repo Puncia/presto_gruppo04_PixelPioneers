@@ -58,13 +58,10 @@ background-color: #EEF8FF;
 
 .quote{
   width: 100px;
-
 }
 
-
-.immaginecarosello{width:auto;
-  height: 350px;
-
+.swiper-slide {
+  height: 100%;
 }
 
 .search{width: 170px;

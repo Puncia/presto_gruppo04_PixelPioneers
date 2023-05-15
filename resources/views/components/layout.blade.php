@@ -8,6 +8,7 @@
     <title>{{ 'presto.it' }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
@@ -17,8 +18,9 @@
 
     <x-nav />
     {{ $slot }}
+    <x-footer />
     @livewireScripts
-    <script src="{{ asset('js/app.js') }}"></script>
-    <x-footer/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </body>
+
 </html>
