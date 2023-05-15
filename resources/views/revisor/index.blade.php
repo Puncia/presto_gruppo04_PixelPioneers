@@ -8,10 +8,10 @@
             </div>
         </div>
     </div>
-    @if(session()->has('message'))
-    <div class="bg-danger">
-        {{session()->get('message')}}
-    </div>
+    @if (session()->has('message'))
+        <div class="bg-danger">
+            {{ session()->get('message') }}
+        </div>
     @endif
     @if ($announcement_to_check)
         <div class="container">
@@ -42,27 +42,27 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    <h5 class="card-title">Titolo: {{$announcement_to_check->title}}</h5>
-                    <p class="card-text">Descrizione: {{$announcement_to_check->body}}</p>
-                    <p class="card-footer">Pubblicato il: {{$announcement_to_check->created_at->format('d/m/Y')}} </p>
+                    <h5 class="card-title">Titolo: {{ $announcement_to_check->title }}</h5>
+                    <p class="card-text">Descrizione: {{ $announcement_to_check->body }}</p>
+                    <p class="card-footer">Pubblicato il: {{ $announcement_to_check->created_at->format('d/m/Y') }} </p>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 m-1">
                 <form action="{{ route('revisor.accept_announcement', ['announcement' => $announcement_to_check]) }}"
                     method="POST">
                     @csrf
                     @method('PATCH')
-                 <button type="submit" class="mt-3 btn_custom btn text-light">Accetta</button></div>
+                    <button type="submit" class="btn_custom btn text-light">Accetta</button>
                 </form>
             </div>
-            <div class="col-12 col-md-6 text-end">
+            <div class="col-12 col-md-6 m-1">
                 <form action="{{ route('revisor.reject_announcement', ['announcement' => $announcement_to_check]) }}"
                     method="POST">
                     @csrf
                     @method('PATCH')
-                    <button type="submit" class=" btn_custom btn text-light">Rifiuta</button></div>
+                    <button type="submit" class="btn_custom btn text-light">Rifiuta</button>
                 </form>
             </div>
         </div>
