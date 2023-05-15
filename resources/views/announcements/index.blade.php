@@ -11,7 +11,7 @@
                                 <p class="card-text">{{ $announcement->body }}</p>
                                 <p class="card-text">{{ $announcement->price }}</p>
                                 <a href="{{ route('announcements.show', compact('announcement')) }}"
-                                    class="btn btn-primary shadow">Visualizza</a>
+                                    class="btn_custom btn text-light">Visualizza</a>
                                 <p class="card-footer my-2">Pubblicato il:
                                     {{ $announcement->created_at->format('d/m/Y') }}
                                     Autore: {{ $announcement->user->name ?? '' }}</p>

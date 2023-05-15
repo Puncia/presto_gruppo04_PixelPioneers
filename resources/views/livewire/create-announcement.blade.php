@@ -26,7 +26,7 @@
                             <div class="mb-3">
                                 <label for="title">Titolo Annuncio</label>
                                 <input wire:model="title" type="text"
-                                    class="form-control @error('title') is-invalid @enderror">
+                                    class="mb-3 form-control @error('title') is-invalid @enderror">
                                 <div class="text-danger">
                                     @error('title')
                                         {{ $message }}
@@ -37,7 +37,7 @@
                             <div class="mb-3">
                                 <label for="title">Descrizione</label>
                                 <input wire:model="body" type="text"
-                                    class="form-control @error('title') is-invalid @enderror">
+                                    class="mb-3 form-control @error('title') is-invalid @enderror">
                                 <div class="text-danger">
                                     @error('body')
                                         {{ $message }}
@@ -48,7 +48,7 @@
                             <div class="mb-3">
                                 <label for="title">Prezzo</label>
                                 <input wire:model="price" type="text"
-                                    class="form-control @error('title') is-invalid @enderror">
+                                    class="mb-3 form-control @error('title') is-invalid @enderror">
                                 <div class="text-danger">
                                     @error('price')
                                         {{ $message }}
@@ -58,7 +58,7 @@
 
                             <div class="mb-3">
                                 <label for="category">Categoria</label>
-                                <select wire:model.defer="category" id="category" class="form-control">
+                                <select wire:model.defer="category" id="category" class="mb-3 form-control">
                                     <option value="">Scegli la categoria</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
