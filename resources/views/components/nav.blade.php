@@ -11,30 +11,6 @@
 
         <div class="collapse navbar-collapse  d-flex justify-content-start" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">Home</a>
-                </li>
-                <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Multilingua
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">
-                                <img width="48" height="48" src="https://img.icons8.com/color/48/italy.png"
-                                    alt="italy" />
-                                Italiano</a></li>
-                        <li><a class="dropdown-item" href="#">
-                                <img width="48" height="48"
-                                    src="https://img.icons8.com/color/48/great-britain.png" alt="great-britain" />
-                                Inglese</a></li>
-                        <li><a class="dropdown-item" href="#">
-                                <img width="48" height="48" src="https://img.icons8.com/color/48/spain.png"
-                                    alt="spain" />
-                                Spagnolo</a></li>
-
-                    </ul>
-                </div>
-
                 @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">Accedi</a>
@@ -51,6 +27,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('announcements.index') }}">Tutti gli annunci</a>
                     </li>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorie
+                        </button>
+                        <ul class="dropdown-menu">
+                            @foreach ($categories as $category)
+                                <li><a class="dropdown-item"
+                                        href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+
+                    </div>
                     @if (Auth::user()->is_revisor)
                         <li class="nav-item">
                             <a class="nav-link btn btn-outline-success btn-sm position-relative" aria-current="page"
@@ -84,30 +73,38 @@
                     </form>
                 @endguest
             </ul>
-          
- 
 
-    </div>
-    <div class="d-flex justify-content-end">
-        <form action="{{ route('announcements.search') }}" method="GET" class="d-flex">
-            <input type="search" name="searched" class="form-control search" placeholder="Search" aria-label="Search">
-            <button class="m-2 btn_custom btn text-light" type="submit">Search</button>
-        </form>
-    </div>
-</div>
-    <div class="dropdown mx-5">
-        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categorie
-        </button>
-        <ul class="dropdown-menu">
-            @foreach ($categories as $category)
-                <li><a class="dropdown-item"
-                        href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
-                </li>
-            @endforeach
-        </ul>
 
+
+        </div>
+        <div class="dropdown mx-3">
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Lingua
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">
+                        <img width="48" height="48" src="https://img.icons8.com/color/48/italy.png"
+                            alt="italy" />
+                        Italiano</a></li>
+                <li><a class="dropdown-item" href="#">
+                        <img width="48" height="48" src="https://img.icons8.com/color/48/great-britain.png"
+                            alt="great-britain" />
+                        Inglese</a></li>
+                <li><a class="dropdown-item" href="#">
+                        <img width="48" height="48" src="https://img.icons8.com/color/48/spain.png"
+                            alt="spain" />
+                        Spagnolo</a></li>
+            </ul>
+        </div>
+        <div class="d-flex justify-content-end">
+            <form action="{{ route('announcements.search') }}" method="GET" class="d-flex">
+                <input type="search" name="searched" class="form-control search" placeholder="Search"
+                    aria-label="Search">
+                <button class="m-1 btn btn_custom text-light" type="submit">Search</button>
+            </form>
+        </div>
     </div>
+
     {{-- </div> --}}
 
 
