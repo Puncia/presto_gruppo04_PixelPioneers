@@ -16,14 +16,13 @@ class Announcement extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function toSearchableArray(){
-
-        $category = $this->category;
+    public function toSearchableArray()
+    {
         $array = [
-            'id'=>$this->id,
-            'title'=>$this->title,
-            'body'=>$this->body,
-            'category'=>$this->category,
+            'id' => $this->id,
+            'title' => $this->title,
+            'body' => $this->body,
+            'category' => $this->category,
         ];
         return $array;
     }
@@ -33,18 +32,20 @@ class Announcement extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function setAnnouncement($value){
+    public function setAnnouncement($value)
+    {
         $this->is_accepted = $value;
         $this->save();
         return true;
     }
 
-    
-
     public static function toBeRevisionedCount()
     {
-
-    return Announcement::where('is_accepted', null)->count();
+        return Announcement::where('is_accepted', null)->count();
     }
 
+    public function isAccepted()
+    {
+        return $this->is_accepted;
+    }
 }

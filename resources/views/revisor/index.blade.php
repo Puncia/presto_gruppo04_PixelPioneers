@@ -9,8 +9,20 @@
         </div>
     </div>
     @if (session()->has('message'))
-        <div class="bg-danger">
+        <div class="bg-info">
             {{ session()->get('message') }}
+        </div>
+        <div class="col-12 col-md-6 m-1">
+            <form action="{{ route('revisor.revert_announcement', ['announcement' => session('announcement')]) }}"
+                method="POST">
+                @csrf
+                <button type="submit" class="btn_custom btn text-light">Annulla operazione</button>
+            </form>
+        </div>
+    @endif
+    @if (session()->has('revert_message'))
+        <div class="bg-info">
+            {{ session()->get('revert_message') }}
         </div>
     @endif
     @if ($announcement_to_check)
