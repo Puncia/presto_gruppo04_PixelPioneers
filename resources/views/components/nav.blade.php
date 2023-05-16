@@ -83,16 +83,13 @@
             </button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">
-                        <img width="48" height="48" src="https://img.icons8.com/color/48/italy.png"
-                            alt="italy" />
+                        <x-_locale lang="it"/> 
                         Italiano</a></li>
                 <li><a class="dropdown-item" href="#">
-                        <img width="48" height="48" src="https://img.icons8.com/color/48/great-britain.png"
-                            alt="great-britain" />
+                        <x-_locale lang="en"/>
                         Inglese</a></li>
                 <li><a class="dropdown-item" href="#">
-                        <img width="48" height="48" src="https://img.icons8.com/color/48/spain.png"
-                            alt="spain" />
+                        <x-_locale lang="es" alt="spain" />
                         Spagnolo</a></li>
             </ul>
         </div>

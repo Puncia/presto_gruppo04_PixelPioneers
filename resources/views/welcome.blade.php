@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row text-center m-5">
             <p class="border-bottom p-3 f2 tx-sec text_shadow">Cogli l'opportunità che hai sempre cercato!</p>
-            <h1 class="fs-1 f1">Benvenuti nel nostro e-commerce</h1>
+            <h1 class="fs-1 f1 ">{{__('ui.Welcome')}}</h1>
         </div>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
