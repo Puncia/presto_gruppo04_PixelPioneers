@@ -77,3 +77,8 @@ body {
   width: 170px;
   height: 45px;
 }
+
+.img-preview {
+  width: 1000px;
+  height: auto;
+}
