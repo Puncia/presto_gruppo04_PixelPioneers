@@ -5,8 +5,8 @@
                 @forelse ($announcements as $announcement)
                     @if (@isset($announcement->is_accepted))
                         <div class="col-12 col-md-4 my-5 d-flex justify-content-center">
-                            <div class="card shadow">
-                                <img src="https://picsum.photos/600" class="card-img-top p-3 rounded">
+                            <div class="card shadow" style="width: 18rem;">
+                                <img src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://picsum.photos/200'}}" class="card-img-top p-3 rounded">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $announcement->title }}</h5>
                                     <p class="card-text">{{ $announcement->body }}</p>

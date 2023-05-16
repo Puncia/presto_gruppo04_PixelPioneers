@@ -54,13 +54,15 @@
                     @if (@isset($announcement->is_accepted))
                         <div class="col-12 col-md-4 my-5 d-flex justify-content-around ">
                             <div class="card shadow" style="width: 18rem;">
-                                <img src="https://picsum.photos/200/300?grayscale" class="card-img-top p-3 rounded">
+                                <img src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://picsum.photos/200'}}" class="card-img-top p-3 rounded">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $announcement->title }}</h5>
                                     <p class="card-text">{{ $announcement->body }}</p>
                                     <p class="card-text">{{ $announcement->price }}€</p>
                                     <a href="" class="justify-content btn_custom btn text-light">Visualizza</a>
                                     <a href=""
+                                    {{-- il tasto visualizza rimanda alla WELCOME ? che cosa è stato cancellato? --}}
+                                    {{-- il nome dell'autore non si vede più --}}
                                         class="my-2 border-top pt-2 border-dark card-link shadow btn_custom btn text-light">Categoria:
                                         {{ $announcement->category->name }}</a>
                                     <p class="card-footer">Pubblicato il:
