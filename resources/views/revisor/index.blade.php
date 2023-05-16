@@ -9,7 +9,7 @@
         </div>
     </div>
     @if (session()->has('message'))
-        <div class="bg-info">
+        <div class="lert alert-success" role="alert ">
             {{ session()->get('message') }}
         </div>
         <div class="col-12 col-md-6 m-1">
