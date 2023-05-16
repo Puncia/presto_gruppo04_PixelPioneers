@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-use App\Models\image;
+
+use App\Models\Image;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -19,6 +20,7 @@ class Announcement extends Model
 
     public function toSearchableArray()
     {
+        $category=$this->category;
         $array = [
             'id' => $this->id,
             'title' => $this->title,
@@ -47,12 +49,15 @@ class Announcement extends Model
 
     public function isAccepted()
     {
-        return $this->is_accepted;
+        // return $this->is_accepted;
+        $this->is_accepted= $value;
+        $this->save();
+        return true;
     }
 
     public function images()
     {
-        return $this->hasMany(image::class);
+        return $this->hasMany(Image::class);
     }
 
 }
