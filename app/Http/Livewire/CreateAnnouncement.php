@@ -20,9 +20,7 @@ class CreateAnnouncement extends Component
     public $message;
     public $validated;
     public $temporary_images;
-    public $images = [];
-    public $image;
-    public $form_id;
+    public $images = [];    
     public $announcement;
     public $price;
    
@@ -74,31 +72,37 @@ class CreateAnnouncement extends Component
     //     $this->validate();
 
     //     $category = Category::find($this->category);
+    
     //     $announcement = $category->announcements()->create([
     //         'title' => $this->title,
     //         'body' => $this->body,
     //         'price' => $this->price,
+
+    //         $this→announcement = $image->user()->associate(Auth::user()),
+    //         $this→announcement = $image->save(),
     //     ]);
 
     //     Auth::user()->announcements()->save($announcement);
-
+        
     //     session()->flash('message', 'Annuncio inserito con successo');
+    // $this->cleanform();
     // }
 
     public function store()
     {
         $this->validate();
+
         $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
         if (count($this->images)) {
             foreach ($this->images as $image) {
                 $this->announcement->images()->create(['path'=>$image->store('images', 'public')]);
-                $this→announcement = $image->user()->associate(Auth::user());
-                $this→announcement = $image->save();
+               // $this→announcement = $image->user()->associate(Auth::user());
+                //$this→announcement = $image->save();
 
 
             }
         }
-        session()->flash('message', 'Annuncio inserito con successo');
+        session()->flash('message', 'Annuncio inserito con successo, sarà pubblicato dopo la revisione');
         $this->cleanform();
 
     }
@@ -114,8 +118,6 @@ public function cleanform(){
     $this->message='';
     $this->temporary_images=[];
     $this->images =[] ;
-    $this->image='';
-    $this->form_id=rand();
     $this->price='';
 }
 
