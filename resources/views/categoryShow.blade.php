@@ -1,7 +1,6 @@
 <x-layout>
     <div class="col-12">
         <div class="row">
-            
             @forelse ($category->announcements as $announcement)
                 <div class="col-6 col-md-4 my-2">
                     <div class="card shadow" style="width: 18rem;">
@@ -12,7 +11,7 @@
                             <a href="{{ route('announcements.show', compact('announcement')) }}"
                                 class="btn btn-primary shadow">Visualizza</a>
                             <p class="card-footer my-2">Pubblicato il: {{ $announcement->created_at->format('d/m/Y') }}
-                                Autore: {{ $announcement->user->name}}</p>
+                                Autore: {{ $announcement->user->name }}</p>
                         </div>
                     </div>
                 </div>
