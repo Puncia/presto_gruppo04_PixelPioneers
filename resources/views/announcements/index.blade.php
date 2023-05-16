@@ -3,7 +3,7 @@
         <div class="col-12 d-flex">
             <div class="row d-flex justify-content-evenly">
                 @forelse ($announcements as $announcement)
-                    @if ($announcement->is_accepted != null)
+                    @if (@isset($announcement->is_accepted))
                         <div class="col-12 col-md-4 my-5 d-flex justify-content-center">
                             <div class="card shadow">
                                 <img src="https://picsum.photos/600" class="card-img-top p-3 rounded">

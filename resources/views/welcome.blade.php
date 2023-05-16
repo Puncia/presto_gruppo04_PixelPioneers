@@ -51,7 +51,7 @@
         <div class="container-fluid">
             <div class="row ">
                 @foreach ($announcements as $announcement)
-                    @if ($announcement->is_accepted != null)
+                    @if (@isset($announcement->is_accepted))
                         <div class="col-12 col-md-4 my-5 d-flex justify-content-around ">
                             <div class="card shadow" style="width: 18rem;">
                                 <img src="https://picsum.photos/200/300?grayscale" class="card-img-top p-3 rounded">
