@@ -92,8 +92,8 @@ class CreateAnnouncement extends Component
         if (count($this->images)) {
             foreach ($this->images as $image) {
                 $this->announcement->images()->create(['path'=>$image->store('images', 'public')]);
-                $this→images[] = $image->user()->associate(Auth::user());
-                $this→images[] = $image->save();
+                $this→announcement = $image->user()->associate(Auth::user());
+                $this→announcement = $image->save();
 
 
             }
