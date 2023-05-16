@@ -17,8 +17,8 @@ class FrontController extends Controller
 
     public function categoryShow(Category $category)
     {
-
-        return view('categoryShow', compact('category'));
+        $announcements = $category->announcements()->orderByDesc('created_at')->paginate(10);
+        return view('categoryShow', compact('announcements'));
     }
     //ricerca annunci
     public function searchAnnouncements(Request $request)

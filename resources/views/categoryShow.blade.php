@@ -1,7 +1,7 @@
 <x-layout>
     <div class="col-12">
         <div class="row">
-            @forelse ($category->announcements as $announcement)
+            @forelse ($announcements as $announcement)
                 @if ($announcement->is_accepted != null)
                     <div class="col-6 col-md-4 my-2">
                         <div class="card shadow" style="width: 18rem;">
