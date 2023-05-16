@@ -17,7 +17,7 @@ class FrontController extends Controller
 
     public function categoryShow(Category $category)
     {
-        
+
         return view('categoryShow', compact('category'));
     }
     //ricerca annunci
