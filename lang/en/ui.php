@@ -7,7 +7,7 @@ return [
     'Registrati'=>'Sign in',
     'Greeting'=>'Hello, ',
     'TAnn'=>'All announcements',
-    'Categorie'=>'Categories',
+    'Categorie'=>'Category',
     'ZR'=>'Auditor Zone',
     'PAnn'=>'Post an annuncements',
     'Logout'=>'Logout',
