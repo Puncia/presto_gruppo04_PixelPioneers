@@ -8,7 +8,7 @@ return [
     'Saluta'=>'Hola, ',
     'TAnn'=>'Todos los anuncios ',
     'Categorie'=>'Categorías',
-    'ZR'=>'Zona Auditor',
+    'ZR'=>'Zona Revisor',
     'PAnn'=>'Publicar un anuncio',
     'Logout'=>'Cerrar sesión',
     'Lingua'=>'Lengua',
