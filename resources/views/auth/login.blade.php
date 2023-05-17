@@ -1,11 +1,11 @@
 <x-layout>
     <div class="container-fluid my-5">
         <div class="row">
-            <div class="col-6 col-md-">
+            <div class="col-6 col-md-6">
                 <h1 class="text-center f1">Sei su Presto.it</h1>
                 <p class="text-center f2 text_shadow tx-sec py-2 border-2 border-white border-bottom">Welcome back! Log in to your account:</p>
                     <div class="row justify-content-center">
-                        <div class="col-8">
+                        <div class="col-8 col-md-8">
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
@@ -29,13 +29,11 @@
                                     <input type="password" class="form-control shadow" id="exampleInputPassword1"
                                         name="password">
                                 </div>
-                                
+                                <div class="">
+                                    <button type="submit" class="btn btn_custom text-light shadow text_shadow">Log in</button>
+                                </div>
                             </form>
-                            <div class="">
-                                <button type="submit" class="btn btn_custom text-light shadow text_shadow">Log in</button>
-                            </div>
                         </div>
-                
                     </div>
             </div>
         </div>

@@ -48,28 +48,31 @@
         {{-- ANNUNCI --}}
 
         <h1 class="fs-1 f1 text-center m-5 border-top py-3">{{ __('ui.Titolo2') }}</h1>
-        <div class="container-fluid">
+        <div class="container ">
             <div class="row ">
                 @foreach ($announcements as $announcement)
                     @if (@isset($announcement->is_accepted))
-                        <div class="col-12 col-md-4 my-5 d-flex justify-content-around ">
-                            <div class="card shadow" style="width: 18rem;">
-                                <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): 'https://picsum.photos/200' }}"
-                                    class="card-img-top p-3 rounded">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $announcement->title }}</h5>
-                                    <p class="card-text">{{ $announcement->body }}</p>
-                                    <p class="card-text">{{ $announcement->price }}€</p>
+                        <div class="col-12 col-md-4 my-5 d-flex justify-content-around flip-card f1">
+                            <div class="flip-card-inner f1">
+                                <div class="flip-card-front f1">
+                                    <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): 'https://picsum.photos/200' }}" class="immagine">
+                                </div>
+                                <div class=" flip-card-back f1 pt-5 text-center">
+                                    <h5>{{ $announcement->title }}</h5>
+                                    <p>{{ $announcement->body }}</p>
+                                    <p>{{ $announcement->price }}€</p>
                                     <a href="{{ route('announcements.show', compact('announcement')) }}"
-                                        class="justify-content btn_custom btn text-light">{{ __('ui.Show') }}</a>
+                                        class="justify-content btn_custom btn text-light">Visualizza</a>
                                     <a href=""
-                                        class="my-2 border-top pt-2 border-dark card-link shadow btn_custom btn text-light">{{ __('ui.Categorie') }}
+                                        class="my-2 border-top pt-2 border-dark shadow btn_custom btn text-light">Categoria:
                                         {{ $announcement->category->name }}</a>
-                                    <p class="card-footer">{{ __('ui.Public') }}
+                                    <p>Pubblicato il:
                                         {{ $announcement->created_at->format('d/m/Y') }}
-                                        {{ __('ui.Autore') }} {{ $announcement->user->name ?? '' }}
+                                        Autore: {{ $announcement->user->name ?? '' }}
                                     </p>
                                 </div>
+                                <div class="left-side"></div>
+                                <div class="right-side"></div>
                             </div>
                         </div>
                     @endif
