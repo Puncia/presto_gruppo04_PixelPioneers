@@ -15,7 +15,7 @@
                                         class="btn_custom btn text-light">Visualizza</a>
                                     <p class="card-footer my-2">Pubblicato il:
                                         {{ $announcement->created_at->format('d/m/Y') }}
-                                        Autore: {{ $announcement->user->name ?? '' }}</p>
+                                        Autore: {{$announcement->user->name ?? '' }}</p>
                                     <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}">Categoria:
                                         {{ $announcement->category->name }}</a>
                                 </div>

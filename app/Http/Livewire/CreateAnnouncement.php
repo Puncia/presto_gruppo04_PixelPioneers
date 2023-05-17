@@ -91,16 +91,18 @@ class CreateAnnouncement extends Component
     public function store()
     {
         $this->validate();
+        
 
         $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
         if (count($this->images)) {
             foreach ($this->images as $image) {
                 $this->announcement->images()->create(['path'=>$image->store('images', 'public')]);
-               // $this→announcement = $image->user()->associate(Auth::user());
-                //$this→announcement = $image->save();
+               
 
 
             }
+            $this→announcement = $image->user()->associate(Auth::user());
+            $this→announcement = $image->save();
         }
         session()->flash('message', 'Annuncio inserito con successo, sarà pubblicato dopo la revisione');
         $this->cleanform();

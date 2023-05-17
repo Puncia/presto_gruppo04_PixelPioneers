@@ -59,15 +59,14 @@
                                     <h5 class="card-title">{{ $announcement->title }}</h5>
                                     <p class="card-text">{{ $announcement->body }}</p>
                                     <p class="card-text">{{ $announcement->price }}€</p>
-                                    <a href="" class="justify-content btn_custom btn text-light">Visualizza</a>
-                                    <a href=""
-                                    {{-- il tasto visualizza rimanda alla WELCOME ? che cosa è stato cancellato? --}}
-                                    {{-- il nome dell'autore non si vede più --}}
-                                        class="my-2 border-top pt-2 border-dark card-link shadow btn_custom btn text-light">Categoria:
+                                    <a href="{{ route('announcements.show', compact('announcement')) }}" class="justify-content btn_custom btn text-light">Visualizza</a>
+                                    <a href="" class="my-2 border-top pt-2 border-dark card-link shadow btn_custom btn text-light">Categoria:
                                         {{ $announcement->category->name }}</a>
                                     <p class="card-footer">Pubblicato il:
                                         {{ $announcement->created_at->format('d/m/Y') }}
+                                        Autore: {{ $announcement->user->name ?? '' }} 
                                     </p>
+                                    
                                 </div>
                             </div>
                         </div>
