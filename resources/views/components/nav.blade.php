@@ -6,9 +6,6 @@
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        {{-- <div class="row">
-            <div class="col-8 bg-info"> --}}
-
         <div class="collapse navbar-collapse  d-flex justify-content-start" id="navbarNav">
             <ul class="navbar-nav">
                 @guest
@@ -34,11 +31,10 @@
                         <ul class="dropdown-menu">
                             @foreach ($categories as $category)
                                 <li><a class="dropdown-item"
-                                        href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
+                                    href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
                                 </li>
                             @endforeach
                         </ul>
-
                     </div>
                     @if (Auth::user()->is_revisor)
                         <li class="nav-item">
@@ -54,16 +50,9 @@
                             </a>
                         </li>
                     @endif
-
-                    {{-- </div> --}}
-
-                    {{-- <div class="col-4"> --}}
-
-
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('announcements.create') }}">{{ __('ui.PAnn') }}</a>
                     </li>
-
                     <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault(); 
                         document.getElementById('logout-form').submit();">{{ __('ui.Logout') }}</a>
@@ -72,9 +61,6 @@
                     </form>
                 @endguest
             </ul>
-
-
-
         </div>
         <div class="dropdown mx-3">
             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -97,8 +83,4 @@
             </form>
         </div>
     </div>
-
-    {{-- </div> --}}
-
-
 </nav>
