@@ -14,7 +14,7 @@
     {{-- CAROSELLO --}}
     <div class="container">
         <div class="row text-center m-5">
-            <p class="border-bottom p-3 f2 tx-sec text_shadow">Cogli l'opportunità che hai sempre cercato!</p>
+            <p class="border-bottom p-3 f2 tx-sec text_shadow">{{ __('ui.Titolo1') }}</p>
             <h1 class="fs-1 f1 ">{{ __('ui.Welcome') }}</h1>
         </div>
         <div class="swiper mySwiper">
@@ -47,7 +47,7 @@
         </div>
         {{-- ANNUNCI --}}
 
-        <h1 class="fs-1 f1 text-center m-5 border-top py-3">Ultimi inseriti:</h1>
+        <h1 class="fs-1 f1 text-center m-5 border-top py-3">{{ __('ui.Titolo2') }}</h1>
         <div class="container-fluid">
             <div class="row ">
                 @foreach ($announcements as $announcement)
