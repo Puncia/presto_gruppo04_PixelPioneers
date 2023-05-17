@@ -61,13 +61,13 @@
                                     <p class="card-text">{{ $announcement->body }}</p>
                                     <p class="card-text">{{ $announcement->price }}€</p>
                                     <a href="{{ route('announcements.show', compact('announcement')) }}"
-                                        class="justify-content btn_custom btn text-light">Visualizza</a>
+                                        class="justify-content btn_custom btn text-light">{{ __('ui.Show') }}</a>
                                     <a href=""
-                                        class="my-2 border-top pt-2 border-dark card-link shadow btn_custom btn text-light">Categoria:
+                                        class="my-2 border-top pt-2 border-dark card-link shadow btn_custom btn text-light">{{ __('ui.Categorie') }}
                                         {{ $announcement->category->name }}</a>
-                                    <p class="card-footer">Pubblicato il:
+                                    <p class="card-footer">{{ __('ui.Public') }}
                                         {{ $announcement->created_at->format('d/m/Y') }}
-                                        Autore: {{ $announcement->user->name ?? '' }}
+                                        {{ __('ui.Autore') }} {{ $announcement->user->name ?? '' }}
                                     </p>
                                 </div>
                             </div>
