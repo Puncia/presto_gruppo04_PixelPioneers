@@ -104,9 +104,11 @@ class CreateAnnouncement extends Component
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
 
-            $this->announcement->user()->associate(Auth::user());
-            $this->announcement->save();
+          
         }
+        $this->announcement->user()->associate(Auth::user());
+        $this->announcement->save();
+        
         session()->flash('message', 'Annuncio inserito con successo, sarà pubblicato dopo la revisione');
         $this->cleanform();
     }
