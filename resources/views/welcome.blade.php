@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row text-center m-5">
             <p class="border-bottom p-3 f2 tx-sec text_shadow">Cogli l'opportunità che hai sempre cercato!</p>
-            <h1 class="fs-1 f1 ">{{__('ui.Welcome')}}</h1>
+            <h1 class="fs-1 f1 ">{{ __('ui.Welcome') }}</h1>
         </div>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -54,19 +54,21 @@
                     @if (@isset($announcement->is_accepted))
                         <div class="col-12 col-md-4 my-5 d-flex justify-content-around ">
                             <div class="card shadow" style="width: 18rem;">
-                                <img src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path) : 'https://picsum.photos/200'}}" class="card-img-top p-3 rounded">
+                                <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): 'https://picsum.photos/200' }}"
+                                    class="card-img-top p-3 rounded">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $announcement->title }}</h5>
                                     <p class="card-text">{{ $announcement->body }}</p>
                                     <p class="card-text">{{ $announcement->price }}€</p>
-                                    <a href="{{ route('announcements.show', compact('announcement')) }}" class="justify-content btn_custom btn text-light">Visualizza</a>
-                                    <a href="" class="my-2 border-top pt-2 border-dark card-link shadow btn_custom btn text-light">Categoria:
+                                    <a href="{{ route('announcements.show', compact('announcement')) }}"
+                                        class="justify-content btn_custom btn text-light">Visualizza</a>
+                                    <a href=""
+                                        class="my-2 border-top pt-2 border-dark card-link shadow btn_custom btn text-light">Categoria:
                                         {{ $announcement->category->name }}</a>
                                     <p class="card-footer">Pubblicato il:
                                         {{ $announcement->created_at->format('d/m/Y') }}
-                                        Autore: {{ $announcement->user->name ?? '' }} 
+                                        Autore: {{ $announcement->user->name ?? '' }}
                                     </p>
-                                    
                                 </div>
                             </div>
                         </div>

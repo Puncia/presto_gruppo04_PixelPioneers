@@ -34,21 +34,25 @@
                         @if ($announcement_to_check->images)
                             <div class="carousel-inner">
                                 @foreach ($announcement_to_check->images as $image)
-                                    <div class="carousel-item @if($loop->first)active @endif">
-                                        <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" alt="">
+                                    <div class="carousel-item @if ($loop->first) active @endif">
+                                        <img src="{{ Storage::url($image->path) }}" class="img-fluid p-3 rounded"
+                                            alt="">
                                     </div>
                                 @endforeach
                             </div>
                         @else
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded" alt="...">
+                                    <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded"
+                                        alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded" alt="...">
+                                    <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded"
+                                        alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded" alt="...">
+                                    <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded"
+                                        alt="...">
                                 </div>
                             </div>
                         @endif
@@ -67,6 +71,8 @@
                     <h5 class="card-title">Titolo: {{ $announcement_to_check->title }}</h5>
                     <p class="card-text">Descrizione: {{ $announcement_to_check->body }}</p>
                     <p class="card-footer">Pubblicato il: {{ $announcement_to_check->created_at->format('d/m/Y') }} </p>
+                    <p class="card-footer">Autore: {{ $announcement_to_check->user->name ?? '' }} </p>
+
                 </div>
             </div>
         </div>
