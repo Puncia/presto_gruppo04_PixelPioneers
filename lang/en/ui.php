@@ -5,7 +5,7 @@ return [
     'Titolo2'=>'The last posted:',
     'Accedi'=>'Log in',
     'Registrati'=>'Sign in',
-    'Greeting'=>'Hello, ',
+    'Saluta'=>'Hello, ',
     'TAnn'=>'All announcements',
     'Categorie'=>'Categories',
     'ZR'=>'Auditor Zone',
