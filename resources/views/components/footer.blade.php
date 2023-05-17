@@ -47,7 +47,7 @@
             </div>
             <div class="">
                 <h3 class="f1 text-center fs-4">
-                    Modalità di pagamento:
+                    {{__('ui.Pay')}}
                 </h3>
                 <div class="text-center border-bottom py-2 mb-2">
                     <img width="48" height="48" src="https://img.icons8.com/office/40/mastercard.png"
