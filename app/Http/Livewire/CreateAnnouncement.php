@@ -68,26 +68,6 @@ class CreateAnnouncement extends Component
         }
     }
 
-    // public function store()
-    // {
-    //     $this->validate();
-
-    //     $category = Category::find($this->category);
-
-    //     $announcement = $category->announcements()->create([
-    //         'title' => $this->title,
-    //         'body' => $this->body,
-    //         'price' => $this->price,
-
-    //         $this→announcement = $image->user()->associate(Auth::user()),
-    //         $this→announcement = $image->save(),
-    //     ]);
-
-    //     Auth::user()->announcements()->save($announcement);
-
-    //     session()->flash('message', 'Annuncio inserito con successo');
-    // $this->cleanform();
-    // }
 
     public function store()
     {
@@ -95,7 +75,7 @@ class CreateAnnouncement extends Component
         $this->announcement = Category::find($this->category)->announcements()->create($this->validate());
         if (count($this->images)) {
             foreach ($this->images as $image) {
-                // $this->announcement->images()->create(['path' => $image->store('images', 'public')]);
+  
                 $newFileName = "announcements/{$this->announcement->id}";
                 $newImage = $this->announcement->images()->create(['path' => $image->store($newFileName, 'public')]);
 
@@ -103,12 +83,10 @@ class CreateAnnouncement extends Component
             }
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
-
-          
         }
         $this->announcement->user()->associate(Auth::user());
         $this->announcement->save();
-        
+
         session()->flash('message', 'Annuncio inserito con successo, sarà pubblicato dopo la revisione');
         $this->cleanform();
     }

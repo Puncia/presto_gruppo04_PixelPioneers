@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid m-5">
+    <div class="container-fluid my-5">
         <div class="row">
             <div class="col-6 text-center f1">
                 <h1>
@@ -26,16 +26,16 @@
         </div>
     @endif
     @if ($announcement_to_check)
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
+        <div class="container mb-5">
+            <div class="row justify-content-center">
+                <div class="col-8 col-md-4 card shadow"style="width: 18rem;">
                     {{-- inizio carosello --}}
                     <div id="carouselExample" class="carousel slide">
                         @if ($announcement_to_check->images)
                             <div class="carousel-inner">
                                 @foreach ($announcement_to_check->images as $image)
                                     <div class="carousel-item @if ($loop->first) active @endif">
-                                        <img src="{{ Storage::url($image->path) }}" class="img-fluid p-3 rounded"
+                                        <img src="{{ Storage::url($image->path) }}" class="w-100 p-3 rounded"
                                             alt="">
                                     </div>
                                 @endforeach
@@ -72,24 +72,23 @@
                     <p class="card-text">Descrizione: {{ $announcement_to_check->body }}</p>
                     <p class="card-footer">Pubblicato il: {{ $announcement_to_check->created_at->format('d/m/Y') }} </p>
                     <p class="card-footer">Autore: {{ $announcement_to_check->user->name ?? '' }} </p>
-
+                    <div class="ps-5">
+                        <form class="d-inline"
+                            action="{{ route('revisor.accept_announcement', ['announcement' => $announcement_to_check]) }}"
+                            method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit" class="btn_custom  btn text-light">Accetta</button>
+                        </form>
+                        <form class="d-inline"
+                            action="{{ route('revisor.reject_announcement', ['announcement' => $announcement_to_check]) }}"
+                            method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit" class="btn_custom btn text-light">Rifiuta</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6 m-1 d-flex align-item-center justify-content-between">
-                <form action="{{ route('revisor.accept_announcement', ['announcement' => $announcement_to_check]) }}"
-                    method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button type="submit" class="btn_custom  btn text-light">Accetta</button>
-                </form>
-                <form action="{{ route('revisor.reject_announcement', ['announcement' => $announcement_to_check]) }}"
-                    method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button type="submit" class="btn_custom btn text-light">Rifiuta</button>
-                </form>
             </div>
         </div>
     @endif
