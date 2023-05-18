@@ -94,7 +94,7 @@ body {
 .flip-card {
   background-color: transparent;
   width: 400px;
-  height: 600px;
+  height: 290px;
   perspective: 1000px;
 }
 
