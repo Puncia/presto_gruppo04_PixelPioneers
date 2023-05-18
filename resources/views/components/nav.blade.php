@@ -1,4 +1,4 @@
-<nav class="nav_custom navbar navbar-expand-lg bg-body-tertiary bg_blu">
+<nav class="nav_custom navbar navbar-expand-lg bg_blu">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('welcome') }}"><img class="logo" src="{{ asset('images/logo.png') }}"
                 alt="logo"></a>
@@ -6,7 +6,7 @@
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse  d-flex justify-content-start" id="navbarNav">
+        <div class="collapse navbar-collapse d-flex justify-content-start" id="navbarNav">
             <ul class="navbar-nav">
                 @guest
                     <li class="nav-item">
@@ -28,7 +28,7 @@
                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ __('ui.Categorie') }}
                         </button>
-                        <ul class="dropdown-menu">
+                        <ul class=" dropdown-menu">
                             @foreach ($categories as $category)
                                 <li><a class="dropdown-item"
                                     href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>

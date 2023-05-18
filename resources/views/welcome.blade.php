@@ -1,17 +1,23 @@
 <x-layout>
+
     {{-- ALLERT --}}
+
     @if (session()->has('access.denied'))
         <div class="alert alert-danger">
             {{ session()->get('access.denied') }}
         </div>
     @endif
     {{-- MESSAGE --}}
+
     @if (session()->has('message'))
         <div class="class-flex flex-row justify-center my-2 alert alert-success">
             {{ session('message') }}
         </div>
     @endif
+
+
     {{-- CAROSELLO --}}
+
     <div class="container">
         <div class="row text-center m-5">
             <p class="border-bottom p-3 f2 tx-sec text_shadow">{{ __('ui.Titolo1') }}</p>
@@ -45,26 +51,28 @@
             </div>
             <div class="swiper-pagination"></div>
         </div>
+
         {{-- ANNUNCI --}}
 
         <h1 class="fs-1 f1 text-center m-5 border-top py-3">{{ __('ui.Titolo2') }}</h1>
-        <div class="container ">
+        <div class="container ms-5 ">
             <div class="row ">
                 @foreach ($announcements as $announcement)
                     @if (@isset($announcement->is_accepted))
-                        <div class="col-12 col-md-4 my-5 d-flex justify-content-around flip-card f1">
+                        <div class="cardcustom col-12 col-md-4 my-5 d-flex justify-content-around flip-card f1">
                             <div class="flip-card-inner f1">
-                                <div class="flip-card-front f1">
-                                    <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): 'https://picsum.photos/200' }}" class="immagine">
+                                <div class="cardcustom flip-card-front f1">
+                                    <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): 'https://picsum.photos/200' }}"
+                                        class="cardcustom immagine">
                                 </div>
-                                <div class=" flip-card-back f1 pt-5 text-center">
+                                <div class="cardcustom flip-card-back f1 pt-4 text-center">
                                     <h5>{{ $announcement->title }}</h5>
                                     <p>{{ $announcement->body }}</p>
                                     <p>{{ $announcement->price }}€</p>
                                     <a href="{{ route('announcements.show', compact('announcement')) }}"
-                                        class="justify-content btn_custom btn text-light">Visualizza</a>
+                                        class="justify-content btncard text-light">Visualizza</a>
                                     <a href=""
-                                        class="my-2 border-top pt-2 border-dark shadow btn_custom btn text-light">Categoria:
+                                        class="my-2 border-top pt-2 border-dark shadow btncard text-light">Categoria:
                                         {{ $announcement->category->name }}</a>
                                     <p>Pubblicato il:
                                         {{ $announcement->created_at->format('d/m/Y') }}

@@ -1,9 +1,10 @@
 <x-layout>
+
     <div class="container-fluid my-5">
         <div class="row">
             <div class="col-6 text-center f1">
                 <h1>
-                    {{ $announcement_to_check ? 'Ecco l\'annuncio da revisionare:' : 'Non ci sono annunci da revisionare' }}
+                    {{ $announcement_to_check ? 'Ecco gli annunci da revisionare:' : 'Non ci sono annunci da revisionare' }}
                 </h1>
             </div>
         </div>
@@ -26,11 +27,16 @@
         </div>
     @endif
     @if ($announcement_to_check)
-        <div class="container mb-5 ">
-            <div class="row justify-content-center">
+
+
+        <div class="container mb-5 d-flex ">
+
+            <div class="row">
                 <div class="col-6 d-inline d-flex">
-                    <div class="col-8 col-md-4 card shadow" style="width: 18rem;">
+                    <div class="col-12 col-md-4 card shadow" style="width: 18rem;">
+
                         {{-- inizio carosello --}}
+
                         <div id="carouselExample" class="carousel slide">
                             @if ($announcement_to_check->images)
                                 <div class="carousel-inner">
@@ -39,11 +45,7 @@
                                             <img src="{{ Storage::url($image->path) }}" class="w-100 p-3 rounded"
                                                 alt="">
                                         </div>
-                                        @foreach ($image->labels as $label)
-                                            <div class="row">
-                                                <p>{{ $label }}</p>
-                                            </div>
-                                        @endforeach
+                                       
                                     @endforeach
                                 </div>
                             @else
@@ -74,11 +76,11 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                        <h5 class="card-title">Titolo: {{ $announcement_to_check->title }}</h5>
-                        <p class="card-text">Descrizione: {{ $announcement_to_check->body }}</p>
-                        <p class="card-footer">Pubblicato il: {{ $announcement_to_check->created_at->format('d/m/Y') }}
+                        <h5 class="card-title f1">Titolo: {{ $announcement_to_check->title }}</h5>
+                        <p class="card-text f1">Descrizione: {{ $announcement_to_check->body }}</p>
+                        <p class="card-footer f2">Pubblicato il: {{ $announcement_to_check->created_at->format('d/m/Y') }}
                         </p>
-                        <p class="card-footer">Autore: {{ $announcement_to_check->user->name ?? '' }} </p>
+                        <p class="card-footer f2">Autore: {{ $announcement_to_check->user->name ?? '' }} </p>
                         <div class="ps-5">
                             <form class="d-inline"
                                 action="{{ route('revisor.accept_announcement', ['announcement' => $announcement_to_check]) }}"
@@ -99,15 +101,23 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <h5 class="tc-accent">Revisione Immagini</h5>
-                <p><span class="{{ $image->adult }}"></span> Adulti</p>
+
+            <div class="col-4 d-inline">
+                <h5 class="tc-accent">Revisione immagini</h5>
+                <p><span class="{{ $image->adult }}"></span> 18+</p>
                 <p><span class="{{ $image->spoof }}"></span> Satira</p>
                 <p><span class="{{ $image->medical }}"></span> Medicina</p>
-                <p><span class="{{ $image->violence }}"></span> Violenta</p>
-                <p><span class="{{ $image->racy }}"></span> Contenuto Ammiccante</p>
+                <p><span class="{{ $image->violence }}"></span> Immagini violente</p>
+                <p><span class="{{ $image->racy }}"></span> Razzismo</p>
             </div>
-
+           <div> @foreach ($image->labels as $label)
+            <div class="row">
+                <p>{{ $label }}</p>
+            </div>
+        @endforeach
+           </div>
         </div>
+
     @endif
+
 </x-layout>

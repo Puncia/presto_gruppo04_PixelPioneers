@@ -1,4 +1,4 @@
-<div class="container-fluid tot" id="nav">
+<div class="container-fluid tot text-light" id="nav">
     {{-- DX --}}
     <div class="row py-2">
         <div class="col-4 text-center">
@@ -24,7 +24,7 @@
                     <p>Registrati subito per diventare un revisor:</p>
                 </div>
 
-                <a href="{{ route('become.revisor') }}"class="f1 text-decoration-none text-black pb-4 mb-1">Clicca qui</a>
+                <a href="{{ route('become.revisor') }}"class="f1 text-decoration-none text-light pb-4 mb-1">Clicca qui</a>
             </div>
             <div class="f1 fs-6 text-center">© 2023 Presto.it - Tutti i diritti riservati</div>
         </div>
@@ -54,7 +54,7 @@
                         alt="mastercard" />
                     <img width="48" height="48" src="https://img.icons8.com/officel/40/visa.png"
                         alt="visa" />
-                        <img width="48" height="48" src="https://img.icons8.com/ios/50/shopping-cart-loaded--v1.png" alt="shopping-cart-loaded--v1"/>
+                     
 
 
                 </div>
