@@ -26,70 +26,88 @@
         </div>
     @endif
     @if ($announcement_to_check)
-        <div class="container mb-5">
+        <div class="container mb-5 ">
             <div class="row justify-content-center">
-                <div class="col-8 col-md-4 card shadow"style="width: 18rem;">
-                    {{-- inizio carosello --}}
-                    <div id="carouselExample" class="carousel slide">
-                        @if ($announcement_to_check->images)
-                            <div class="carousel-inner">
-                                @foreach ($announcement_to_check->images as $image)
-                                    <div class="carousel-item @if ($loop->first) active @endif">
-                                        <img src="{{ Storage::url($image->path) }}" class="w-100 p-3 rounded"
-                                            alt="">
+                <div class="col-6 d-inline d-flex">
+                    <div class="col-8 col-md-4 card shadow" style="width: 18rem;">
+                        {{-- inizio carosello --}}
+                        <div id="carouselExample" class="carousel slide">
+                            @if ($announcement_to_check->images)
+                                <div class="carousel-inner">
+                                    @foreach ($announcement_to_check->images as $image)
+                                        <div class="carousel-item @if ($loop->first) active @endif">
+                                            <img src="{{ Storage::url($image->path) }}" class="w-100 p-3 rounded"
+                                                alt="">
+                                        </div>
+                                        @foreach ($image->labels as $label)
+                                            <div class="row">
+                                                <p>{{ $label }}</p>
+                                            </div>
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            @else
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded"
+                                            alt="...">
                                     </div>
-                                @endforeach
-                            </div>
-                        @else
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded"
-                                        alt="...">
+                                    <div class="carousel-item">
+                                        <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded"
+                                            alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded"
+                                            alt="...">
+                                    </div>
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded"
-                                        alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded"
-                                        alt="...">
-                                </div>
-                            </div>
-                        @endif
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
+                            @endif
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
 
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                    <h5 class="card-title">Titolo: {{ $announcement_to_check->title }}</h5>
-                    <p class="card-text">Descrizione: {{ $announcement_to_check->body }}</p>
-                    <p class="card-footer">Pubblicato il: {{ $announcement_to_check->created_at->format('d/m/Y') }} </p>
-                    <p class="card-footer">Autore: {{ $announcement_to_check->user->name ?? '' }} </p>
-                    <div class="ps-5">
-                        <form class="d-inline"
-                            action="{{ route('revisor.accept_announcement', ['announcement' => $announcement_to_check]) }}"
-                            method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <button type="submit" class="btn_custom  btn text-light">Accetta</button>
-                        </form>
-                        <form class="d-inline"
-                            action="{{ route('revisor.reject_announcement', ['announcement' => $announcement_to_check]) }}"
-                            method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <button type="submit" class="btn_custom btn text-light">Rifiuta</button>
-                        </form>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <h5 class="card-title">Titolo: {{ $announcement_to_check->title }}</h5>
+                        <p class="card-text">Descrizione: {{ $announcement_to_check->body }}</p>
+                        <p class="card-footer">Pubblicato il: {{ $announcement_to_check->created_at->format('d/m/Y') }}
+                        </p>
+                        <p class="card-footer">Autore: {{ $announcement_to_check->user->name ?? '' }} </p>
+                        <div class="ps-5">
+                            <form class="d-inline"
+                                action="{{ route('revisor.accept_announcement', ['announcement' => $announcement_to_check]) }}"
+                                method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn_custom  btn text-light">Accetta</button>
+                            </form>
+                            <form class="d-inline"
+                                action="{{ route('revisor.reject_announcement', ['announcement' => $announcement_to_check]) }}"
+                                method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn_custom btn text-light">Rifiuta</button>
+                            </form>
+                        </div>
+
                     </div>
                 </div>
             </div>
+            <div class="col-4">
+                <h5 class="tc-accent">Revisione Immagini</h5>
+                <p><span class="{{ $image->adult }}"></span> Adulti</p>
+                <p><span class="{{ $image->spoof }}"></span> Satira</p>
+                <p><span class="{{ $image->medical }}"></span> Medicina</p>
+                <p><span class="{{ $image->violence }}"></span> Violenta</p>
+                <p><span class="{{ $image->racy }}"></span> Contenuto Ammiccante</p>
+            </div>
+
         </div>
     @endif
 </x-layout>
