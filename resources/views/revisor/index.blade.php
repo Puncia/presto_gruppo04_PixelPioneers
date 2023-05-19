@@ -80,7 +80,6 @@
                             </form>
                         </div>
                     </div>
-
                 </div>
             </div>
             @forelse ($announcement_to_check->images as $index=>$image)
@@ -93,12 +92,12 @@
                         <p class="googleRatingField"><span class="{{ $image->violence }}"></span> Immagini violente
                         </p>
                         <p class="googleRatingField"><span class="{{ $image->racy }}"></span> Razzismo</p>
-                        <div class="row my-1 text-center">
+                        {{-- <div class="row my-1 text-center">
                             <h5 class="tc-accent border-bottom border-2 text-center">Labels</h5>
                             @for ($i = 0; $i < 4; $i++)
                                 <p class="googleLabels">{{ $image->labels[$i] }}</p>
                             @endfor
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             @empty
