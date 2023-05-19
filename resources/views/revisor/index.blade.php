@@ -38,8 +38,8 @@
                             <div class="carousel-inner">
                                 @forelse ($announcement_to_check->images as $image)
                                     <div class="carousel-item @if ($loop->first) active @endif">
-                                        <img src="{{ Storage::url($image->path) }}" class="w-100 p-3 rounded"
-                                            alt="">
+                                        <img src="{{ !$image->get()->isEmpty() ? $image->getUrl(400, 300) : asset('images/placeholder.png') }}"
+                                            class="cardcustom immagine">
                                     </div>
                                 @empty
                                     <img src="{{ asset('images/placeholder.png') }}">
@@ -83,26 +83,27 @@
 
                 </div>
             </div>
-            <div class="col-2 mx-5">
-                <div class="row my-1">
-                    <h5 class="tc-accent border-bottom border-2 text-center">Revisione immagini</h5>
-                    <p class="googleRatingField"><span class="{{ $image->adult }}"></span> 18+</p>
-                    <p class="googleRatingField"><span class="{{ $image->spoof }}"></span> Satira</p>
-                    <p class="googleRatingField"><span class="{{ $image->medical }}"></span> Medicina</p>
-                    <p class="googleRatingField"><span class="{{ $image->violence }}"></span> Immagini violente
-                    </p>
-                    <p class="googleRatingField"><span class="{{ $image->racy }}"></span> Razzismo</p>
+            @forelse ($announcement_to_check->images as $index=>$image)
+                <div class="col-2 mx-5">
+                    <div class="row my-1">
+                        <h5 class="tc-accent border-bottom border-2 text-center">Immagine {{ $index + 1 }}</h5>
+                        <p class="googleRatingField"><span class="{{ $image->adult }}"></span> 18+</p>
+                        <p class="googleRatingField"><span class="{{ $image->spoof }}"></span> Satira</p>
+                        <p class="googleRatingField"><span class="{{ $image->medical }}"></span> Medicina</p>
+                        <p class="googleRatingField"><span class="{{ $image->violence }}"></span> Immagini violente
+                        </p>
+                        <p class="googleRatingField"><span class="{{ $image->racy }}"></span> Razzismo</p>
+                        <div class="row my-1 text-center">
+                            <h5 class="tc-accent border-bottom border-2 text-center">Labels</h5>
+                            @for ($i = 0; $i < 4; $i++)
+                                <p class="googleLabels">{{ $image->labels[$i] }}</p>
+                            @endfor
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-2 mx-1">
-                <div class="row my-1">
-                    <h5 class="tc-accent border-bottom border-2 text-center">Labels</h5>
-                    @forelse ($image->labels as $label)
-                        <p class="googleLabels">{{ $label }}</p>
-                    @empty
-                    @endforelse
-                </div>
-            </div>
+            @empty
+            @endforelse
+
         </div>
     @endif
 
