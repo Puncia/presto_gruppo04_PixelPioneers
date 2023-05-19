@@ -23,10 +23,10 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('announcements.index') }}">{{ __('ui.TAnn') }}</a>
+                        <a class="nav-custom nav-link" href="{{ route('announcements.index') }}">{{ __('ui.TAnn') }}</a>
                     </li>
                     <div class="dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="nav-custom btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ __('ui.Categorie') }}
                         </button>
                         <ul class=" dropdown-menu">
@@ -39,7 +39,7 @@
                     </div>
                     @if (Auth::user()->is_revisor)
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-success btn-sm position-relative" aria-current="page"
+                            <a class="nav-custom nav-link btn btn-outline-success btn-sm position-relative" aria-current="page"
                                 href="{{ route('revisor.index') }}">{{ __('ui.ZR') }}
                                 <span
                                     class="position-absolute top-0 start-100 translate-middle badge
@@ -52,9 +52,9 @@
                         </li>
                     @endif
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('announcements.create') }}">{{ __('ui.PAnn') }}</a>
+                        <a class="nav-custom nav-link" href="{{ route('announcements.create') }}">{{ __('ui.PAnn') }}</a>
                     </li>
-                    <a class="nav-link" href="{{ route('logout') }}"
+                    <a class="nav-custom nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault(); 
                         document.getElementById('logout-form').submit();">{{ __('ui.Logout') }}</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
