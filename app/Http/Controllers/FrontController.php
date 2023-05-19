@@ -18,7 +18,7 @@ class FrontController extends Controller
     public function categoryShow(Category $category)
     {
         $announcements = $category->announcements()->orderByDesc('created_at')->paginate(10);
-        return view('categoryShow', compact('announcements'));
+        return view('categoryShow', compact('announcements', 'category'));
     }
     //ricerca annunci
     public function searchAnnouncements(Request $request)
@@ -27,9 +27,9 @@ class FrontController extends Controller
         return view('announcements.index', compact('announcements'));
     }
 
-    public function setLanguage($lang){
+    public function setLanguage($lang)
+    {
         session()->put('locale', $lang);
         return redirect()->back();
     }
-
 }

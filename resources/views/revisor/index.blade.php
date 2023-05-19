@@ -27,10 +27,7 @@
         </div>
     @endif
     @if ($announcement_to_check)
-
-
         <div class="container mb-5 d-flex ">
-
             <div class="row">
                 <div class="col-6 d-inline d-flex">
                     <div class="col-12 col-md-4 card shadow" style="width: 18rem;">
@@ -40,13 +37,30 @@
                         <div id="carouselExample" class="carousel slide">
                             @if ($announcement_to_check->images)
                                 <div class="carousel-inner">
-                                    @foreach ($announcement_to_check->images as $image)
+                                    @forelse ($announcement_to_check->images as $image)
                                         <div class="carousel-item @if ($loop->first) active @endif">
                                             <img src="{{ Storage::url($image->path) }}" class="w-100 p-3 rounded"
                                                 alt="">
                                         </div>
-                                       
-                                    @endforeach
+                                        <div class="col-4 d-inline">
+                                            <h5 class="tc-accent">Revisione immagini</h5>
+                                            <p><span class="{{ $image->adult }}"></span> 18+</p>
+                                            <p><span class="{{ $image->spoof }}"></span> Satira</p>
+                                            <p><span class="{{ $image->medical }}"></span> Medicina</p>
+                                            <p><span class="{{ $image->violence }}"></span> Immagini violente</p>
+                                            <p><span class="{{ $image->racy }}"></span> Razzismo</p>
+                                        </div>
+
+                                        <div>
+                                            @foreach ($image->labels as $label)
+                                                <div class="row">
+                                                    <p>{{ $label }}</p>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    @empty
+                                        <img src="{{ asset('images/placeholder.png') }}">
+                                    @endforelse
                                 </div>
                             @else
                                 <div class="carousel-inner">
@@ -78,7 +92,8 @@
                         </div>
                         <h5 class="card-title f1">Titolo: {{ $announcement_to_check->title }}</h5>
                         <p class="card-text f1">Descrizione: {{ $announcement_to_check->body }}</p>
-                        <p class="card-footer f2">Pubblicato il: {{ $announcement_to_check->created_at->format('d/m/Y') }}
+                        <p class="card-footer f2">Pubblicato il:
+                            {{ $announcement_to_check->created_at->format('d/m/Y') }}
                         </p>
                         <p class="card-footer f2">Autore: {{ $announcement_to_check->user->name ?? '' }} </p>
                         <div class="ps-5">
@@ -101,21 +116,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-4 d-inline">
-                <h5 class="tc-accent">Revisione immagini</h5>
-                <p><span class="{{ $image->adult }}"></span> 18+</p>
-                <p><span class="{{ $image->spoof }}"></span> Satira</p>
-                <p><span class="{{ $image->medical }}"></span> Medicina</p>
-                <p><span class="{{ $image->violence }}"></span> Immagini violente</p>
-                <p><span class="{{ $image->racy }}"></span> Razzismo</p>
-            </div>
-           <div> @foreach ($image->labels as $label)
-            <div class="row">
-                <p>{{ $label }}</p>
-            </div>
-        @endforeach
-           </div>
         </div>
 
     @endif

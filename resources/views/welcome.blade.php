@@ -62,7 +62,7 @@
                         <div class="cardcustom col-12 col-md-4 my-5 d-flex justify-content-around flip-card f1">
                             <div class="flip-card-inner f1">
                                 <div class="cardcustom flip-card-front f1">
-                                    <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): 'https://picsum.photos/200' }}"
+                                    <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): asset('images/placeholder.png') }}"
                                         class="cardcustom immagine">
                                 </div>
                                 <div class="cardcustom flip-card-back f1 pt-4 text-center">
