@@ -26,7 +26,8 @@
                         <a class="nav-custom nav-link" href="{{ route('announcements.index') }}">{{ __('ui.TAnn') }}</a>
                     </li>
                     <div class="dropdown">
-                        <button class="nav-custom btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="nav-custom btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             {{ __('ui.Categorie') }}
                         </button>
                         <ul class=" dropdown-menu">
@@ -39,8 +40,8 @@
                     </div>
                     @if (Auth::user()->is_revisor)
                         <li class="nav-item">
-                            <a class="nav-custom nav-link btn btn-outline-success btn-sm position-relative" aria-current="page"
-                                href="{{ route('revisor.index') }}">{{ __('ui.ZR') }}
+                            <a class="nav-custom nav-link btn btn-outline-success btn-sm position-relative"
+                                aria-current="page" href="{{ route('revisor.index') }}">{{ __('ui.ZR') }}
                                 <span
                                     class="position-absolute top-0 start-100 translate-middle badge
                                         rounded-pill bg-danger">

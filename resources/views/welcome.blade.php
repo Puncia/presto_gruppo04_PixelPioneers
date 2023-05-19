@@ -55,11 +55,11 @@
         {{-- ANNUNCI --}}
 
         <h1 class="fs-1 f1 text-center m-5 border-top py-3">{{ __('ui.Titolo2') }}</h1>
-        <div class="container ms-5 ">
-            <div class="row ">
+        <div class="container-fluid ">
+            <div class="row justify-content-center">
                 @foreach ($announcements as $announcement)
                     @if (@isset($announcement->is_accepted))
-                        <div class="cardcustom col-12 col-md-4 my-5 d-flex justify-content-around flip-card f1">
+                        <div class="cardcustom col-12 col-md-4 my-5 d-flex justify-content-evenly flip-card f1">
                             <div class="flip-card-inner f1">
                                 <div class="cardcustom flip-card-front f1">
                                     <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): asset('images/placeholder.png') }}"

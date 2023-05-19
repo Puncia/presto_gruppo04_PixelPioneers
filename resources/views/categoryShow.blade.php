@@ -6,7 +6,7 @@
             </div>
             @forelse ($announcements as $announcement)
                 @if (@isset($announcement->is_accepted))
-                    <div class="col-6 col-md-4 my-2">
+                    <div class="col-12 col-md-3 my-5 d-flex justify-content-center">
                         <div class="card shadow" style="width: 18rem;">
                             <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): asset('images/placeholder.png') }}"
                                 class="cardcustom immagine">

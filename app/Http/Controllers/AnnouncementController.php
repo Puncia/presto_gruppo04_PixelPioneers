@@ -20,9 +20,9 @@ class AnnouncementController extends Controller
 
     public function indexAnnouncement()
     {
-        $announcements = Announcement::where('is_accepted', true)->orderByDesc('created_at')->paginate(10);
+        $announcements = Announcement::where('is_accepted', true)->orderByDesc('created_at')->paginate(12);
 
-        if ($announcements->currentPage() === 1 && $announcements->count() < 10) {
+        if ($announcements->currentPage() === 1 && $announcements->count() < 12) {
             $extraAnnouncement = Announcement::orderByDesc('created_at')
                 ->skip($announcements->count())
                 ->first();
