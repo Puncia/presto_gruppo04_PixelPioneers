@@ -35,49 +35,16 @@
                         {{-- inizio carosello --}}
 
                         <div id="carouselExample" class="carousel slide">
-                            @if ($announcement_to_check->images)
-                                <div class="carousel-inner">
-                                    @forelse ($announcement_to_check->images as $image)
-                                        <div class="carousel-item @if ($loop->first) active @endif">
-                                            <img src="{{ Storage::url($image->path) }}" class="w-100 p-3 rounded"
-                                                alt="">
-                                        </div>
-                                        <div class="col-4 d-inline">
-                                            <h5 class="tc-accent">Revisione immagini</h5>
-                                            <p><span class="{{ $image->adult }}"></span> 18+</p>
-                                            <p><span class="{{ $image->spoof }}"></span> Satira</p>
-                                            <p><span class="{{ $image->medical }}"></span> Medicina</p>
-                                            <p><span class="{{ $image->violence }}"></span> Immagini violente</p>
-                                            <p><span class="{{ $image->racy }}"></span> Razzismo</p>
-                                        </div>
-
-                                        <div>
-                                            @foreach ($image->labels as $label)
-                                                <div class="row">
-                                                    <p>{{ $label }}</p>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    @empty
-                                        <img src="{{ asset('images/placeholder.png') }}">
-                                    @endforelse
-                                </div>
-                            @else
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded"
-                                            alt="...">
+                            <div class="carousel-inner">
+                                @forelse ($announcement_to_check->images as $image)
+                                    <div class="carousel-item @if ($loop->first) active @endif">
+                                        <img src="{{ Storage::url($image->path) }}" class="w-100 p-3 rounded"
+                                            alt="">
                                     </div>
-                                    <div class="carousel-item">
-                                        <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded"
-                                            alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="https://picsum.photos/200" class="d-block w-50 img-fluid p-3 rounded"
-                                            alt="...">
-                                    </div>
-                                </div>
-                            @endif
+                                @empty
+                                    <img src="{{ asset('images/placeholder.png') }}">
+                                @endforelse
+                            </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
                                 data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -112,12 +79,31 @@
                                 <button type="submit" class="btn_custom btn text-light">Rifiuta</button>
                             </form>
                         </div>
-
                     </div>
+
+                </div>
+            </div>
+            <div class="col-2 mx-5">
+                <div class="row my-1">
+                    <h5 class="tc-accent border-bottom border-2 text-center">Revisione immagini</h5>
+                    <p class="googleRatingField"><span class="{{ $image->adult }}"></span> 18+</p>
+                    <p class="googleRatingField"><span class="{{ $image->spoof }}"></span> Satira</p>
+                    <p class="googleRatingField"><span class="{{ $image->medical }}"></span> Medicina</p>
+                    <p class="googleRatingField"><span class="{{ $image->violence }}"></span> Immagini violente
+                    </p>
+                    <p class="googleRatingField"><span class="{{ $image->racy }}"></span> Razzismo</p>
+                </div>
+            </div>
+            <div class="col-2 mx-1">
+                <div class="row my-1">
+                    <h5 class="tc-accent border-bottom border-2 text-center">Labels</h5>
+                    @forelse ($image->labels as $label)
+                        <p class="googleLabels">{{ $label }}</p>
+                    @empty
+                    @endforelse
                 </div>
             </div>
         </div>
-
     @endif
 
 </x-layout>

@@ -78,12 +78,12 @@
                             @if (!empty($images))
                                 <div class="row">
                                     <div class="col-12">
-                                        <p>photo preview</p>
+                                        <p>Photo Preview</p>
                                         <div class="row border border-4 border-info rounded shadow py-4">
                                             @foreach ($images as $key => $image)
                                                 <div class="col my-3">
                                                     <div class="img-preview mx-auto shadow rounded"
-                                                        style="background-image: url({{ $image->temporaryUrl()}});">
+                                                        style="background-image: url({{ $image->temporaryUrl() }});">
                                                     </div>
                                                     <button type="button"
                                                         class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
@@ -94,7 +94,7 @@
                                     </div>
                                 </div>
                             @endif
-                            <button type="submit" class="btn_custom btn text-light">Crea</button>
+                            <button type="submit" class="btn_custom btn text-light my-2">Crea</button>
                         </form>
                     </div>
                 </div>
