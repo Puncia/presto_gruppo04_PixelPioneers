@@ -24,7 +24,7 @@ class RemoveFaces implements ShouldQueue
      */
     public function __construct($announcement_image_id)
     {
-        $this->$announcement_image_id =  $announcement_image_id;
+        $this->announcement_image_id =  $announcement_image_id;
     }
 
     /**
@@ -33,38 +33,38 @@ class RemoveFaces implements ShouldQueue
     public function handle(): void
     {
         $i = Image::find($this->announcement_image_id);
-        if(!$i){
+        if (!$i) {
             return;
         }
         $srcPath = storage_path('app/public/' . $i->path);
         $image = file_get_contents($srcPath);
-        
+
         putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
 
         $imageAnnotator = new ImageAnnotatorClient();
         $response = $imageAnnotator->faceDetection($image);
-        $faces =$response->getFaceAnnotations();
+        $faces = $response->getFaceAnnotations();
 
-        foreach ($faces as $face){
+        foreach ($faces as $face) {
             $vertices = $face->getBoundingPoly()->getVertices();
 
-            $bounds =[];
+            $bounds = [];
 
-            foreach ($vertices as $vertex){
+            foreach ($vertices as $vertex) {
                 $bounds[] = [$vertex->getX(), $vertex->getY()];
             }
 
-            $w = $bounds [2][0] - $bounds [0][0];
-            $h = $bounds [2][1] - $bounds [0][1];
+            $w = $bounds[2][0] - $bounds[0][0];
+            $h = $bounds[2][1] - $bounds[0][1];
 
             $image = SpatieImage::load($srcPath);
 
             $image->watermark(base_path('resources/img/smile1.png'))
-            ->watermarkPosition('top-left')
-            ->watermarkPadding($bounds [0][0], $bounds [0][1])
-            ->watermarkWidth($w, Manipulations::UNIT_PIXELS)
-            ->watermarkHeight($h, Manipulations::UNIT_PIXELS)
-            ->watermarkFit(Manipulations::FIT_STRETCH);
+                ->watermarkPosition('top-left')
+                ->watermarkPadding($bounds[0][0], $bounds[0][1])
+                ->watermarkWidth($w, Manipulations::UNIT_PIXELS)
+                ->watermarkHeight($h, Manipulations::UNIT_PIXELS)
+                ->watermarkFit(Manipulations::FIT_STRETCH);
 
             $image->save($srcPath);
         }
