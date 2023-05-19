@@ -35,7 +35,10 @@ return [
     'Public'=>'Pubblicato il: ',
     'Autore'=>'Autore: ',
     'LVN'=>'Vuoi lavorare con noi?',
-    'RegOra'=>'Registrati subito per diventare un revisor:',
+    'RegOra'=>'Registrati subito per diventare un revisor',
     'buttom'=>'Clicca qui',
     'Pay'=>'Modalità di pagamento:',
+    'Privacy'=>'Tutti i diritti risevati',
+    'Tel.'=>'Numero di telefono',
+    'F&C'=>'Faq e contatti',
 ];

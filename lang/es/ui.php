@@ -38,4 +38,7 @@ return [
     'RegOra'=>'Regístrate ahora para convertirte en revisor:',
     'buttom'=>'Haz clic aquí',
     'Pay'=>'Forma de pago:',
+    'Privacy'=>'Todos los derechos reservados',
+    'Tel.'=>'Teléfono de contacto',
+    'F&C'=>'Preguntas y contactos',
 ];

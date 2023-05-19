@@ -38,4 +38,7 @@ return [
     'RegOra'=>'Register now to become a reviewer:',
     'buttom'=>'Click here',
     'Pay'=>'Payment method:',
+    'Privacy'=>'All rights reserved',
+    'Tel.'=>'Phone number',
+    'F&C'=>'Faq and contacts',
 ];

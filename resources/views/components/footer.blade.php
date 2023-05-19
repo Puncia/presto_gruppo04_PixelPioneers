@@ -6,7 +6,7 @@
                 <p>About us:</p>
             </div>
             <div class="pt-0 m-0 f1">
-                <p>Numero di telefono: 070/23565566</p>
+                <p>{{__('ui.Tel.')}}: 070/23565566</p>
                 <p>Email: presto.it@email.com</p>
                 <p>Pt.iva: 4566566</p>
             </div>
@@ -18,23 +18,22 @@
                     <img src="{{ asset('images/logo.png') }}" width="auto" height="50" alt="">
                 </div>
                 <div class="pt-2 m-0 f1">
-                    <p>Vuoi lavorare con noi?</p>
+                    <p>{{__('ui.LVN')}}</p>
                 </div>
                 <div class="pt-0 m-0 f1">
-                    <p>Registrati subito per diventare un revisor:</p>
+                    <p>{{__('ui.RegOra')}}</p>
                 </div>
 
-                <a href="{{ route('become.revisor') }}"class="f1 text-decoration-none text-light pb-4 mb-1">Clicca
-                    qui</a>
+                <a href="{{ route('become.revisor') }}"class="f1 text-decoration-none text-light pb-4 mb-1">{{__('ui.buttom')}}</a>
             </div>
-            <div class="f1 fs-6 text-center">© 2023 Presto.it - Tutti i diritti riservati</div>
+            <div class="f1 fs-6 text-center">© 2023 Presto.it - {{__('ui.Privacy')}}</div>
         </div>
         {{-- SX --}}
         <div class="col-12 col-md-4">
             <h2 class="f1 text-center fs-4">
                 <img width="35" height="35" src="https://img.icons8.com/flat-round/64/question-mark.png"
                     alt="question-mark" />
-                Faq e contatti:
+                {{__('ui.F&C')}}
             </h2>
             <div class="text-center border-bottom py-2 mb-2">
                 <img width="48" height="48" src="https://img.icons8.com/fluency/48/facebook.png"
