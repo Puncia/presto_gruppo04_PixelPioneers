@@ -26,51 +26,64 @@
             {{ session()->get('revert_message') }}
         </div>
     @endif
-
-
-
+{{-- Annunci da revisionare --}}
     <div class="container-fluid ">
         <div class="row d-flex justify-content-center">
             @if ($announcement_to_check)
                 @forelse($announcement_to_check->images as $image)
                     <div class="col-4">
                         <img src="{{ !$image->get()->isEmpty() ? $image->getUrl(400, 300) : asset('images/placeholder.png') }}"
-                            class="cardcustom immagine">
+                            class="cardcustom immagine my-2">
                     </div>
-                    <div class="col-md-4 my-0 text-center">
-                        <h5 class="tc-accent border-bottom border-2 text-center">Immagine</h5>
+                    <div class="col-md-4 my-0 text-center fluid py-5">
+                        <h5 class="tc-accent border-bottom border-2 text-center pb-1">Immagine</h5>
                         <p class="rounded-5 googleRatingField text-center d-flex align-items-center">
-                            <span class="{{ $image->adult }} align-self-center"></span> <span class="mx-auto">18+</span>
-                        </p>
-                        <p class="rounded-5 googleRatingField text-center d-flex align-items-center">
-                            <span class="{{ $image->spoof }} align-self-center"></span> <span
-                                class="mx-auto">Satira</span>
-                        </p>
-                        <p class="rounded-5 googleRatingField text-center d-flex align-items-center">
-                            <span class="{{ $image->medical }} align-self-center"></span> <span
-                                class="mx-auto">Medicina</span>
-                        </p>
-                        <p class="rounded-5 googleRatingField text-center d-flex align-items-center">
-                            <span class="{{ $image->violence }} align-self-center"></span> <span
-                                class="mx-auto">Immagini
-                                violente</span>
-                        </p>
-                        <p class="rounded-5 googleRatingField text-center d-flex align-items-center">
-                            <span class="{{ $image->racy }} align-self-center "></span> <span class="mx-auto">
-                                Razzismo</span>
+                            <span class="{{ $image->adult }} align-self-center"></span>
+                            <span class="mx-auto">18+</span>
                         </p>
 
+                        <p class="rounded-5 googleRatingField text-center d-flex align-items-center">
+                            <span class="{{ $image->spoof }} align-self-center"></span>
+                            <span class="mx-auto">Satira</span>
+                        </p>
+                        <p class="rounded-5 googleRatingField text-center d-flex align-items-center">
+                            <span class="{{ $image->medical }} align-self-center"></span> 
+                            <span class="mx-auto">Medicina</span>
+                        </p>
+                        <p class="rounded-5 googleRatingField text-center d-flex align-items-center">
+                            <span class="{{ $image->violence }} align-self-center"></span> 
+                            <span class="mx-auto">Immagini violente</span>
+                        </p>
+                        <p class="rounded-5 googleRatingField text-center d-flex align-items-center">
+                            <span class="{{ $image->racy }} align-self-center "></span>
+                            <span class="mx-auto">Razzismo</span>
+                        </p>
                     </div>
-                    <div class="col-4">
-                        <h5 class="tc-accent border-bottom border-2 text-center">Labels</h5>
+                    {{-- Labels --}}
+                    <div class="col-4 fluid py-5">
+                        <h5 class="tc-accent border-bottom border-2 pb-1 text-center">Labels</h5>
                         @for ($i = 0; $i < 4; $i++)
-                            <p class="rounded-5 googleLabels">{{ $image->labels[$i] }}</p>
+                            <p class="rounded-5 googleLabels text-center ">{{ $image->labels[$i] }}</p>
                         @endfor
                     </div>
                 @empty
                 @endforelse
             @endif
         </div>
-    </div>
+        {{-- <div class="d-flex justify-content-end my-3 py-3">
+            {{-- bottone accetta 
+            <form action="{{route('revisor.accept_announcement', ['announcement'=>$announcement_to_check])}}" method="POST">
+                @csrf
+                @method('PATCH')
+                <button class="btn_custom btn text-light" type="submit">Accetta</button>
+            </form>
+            {{-- bottone rifiuta 
+            <form action="{{route('revisor.reject_announcement', ['announcement'=>$announcement_to_check])}}" method="POST">
+                @csrf
+                @method('PATCH')
+                <button class="btn_custom btn text-light mx-5" type="submit">Rifiuta</button>
+            </form>
+        </div>
+    </div>--}}
 
 </x-layout>
