@@ -67,6 +67,12 @@
                                 @endfor
                             @endif
                         </div>
+                        <div class="product-detail pt-3 f1 text-center">
+
+                            <p class="fw-bold fs-4">{{$announcement_to_check->title}}</p>
+                            <p>{{$announcement_to_check->body}}</p>
+            
+                        </div>
                     </div>
                 </div>
             </div>

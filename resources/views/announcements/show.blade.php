@@ -29,8 +29,8 @@
             <div class="col-12 col-md-4">
                 <div class="product-content">
                     <h2 class="f1 product-title">{{ $announcement->title }}</h2>
-                    <div class="product-link f1">{{ $announcement->category->name }}</div>
-                    <div class="f2">Pubblicato {{ $announcement->created_at->format('l d/m/Y') }}</div>
+                    <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"class="product-link f1">{{ $announcement->category->name }}</a>
+                    <div class="f2">Pubblicato il {{ $announcement->created_at->format('d/m/Y') }}</div>
                     <div class="f2"><span>Creato da
                             {{ $announcement->user->name ?? '' }}</span>
                     </div>

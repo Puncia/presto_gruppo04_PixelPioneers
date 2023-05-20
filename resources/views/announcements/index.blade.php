@@ -35,8 +35,8 @@
                                     </a>
                                 </div>
                                 <p class="created-by ps-3 f2 text-secondary pt-2">Creato da
-                                    {{ $announcement->user->name }}
-                                    {{ $announcement->created_at->format('l d/m/Y') }}</p>
+                                    {{ $announcement->user->name }} il
+                                    {{ $announcement->created_at->format('d/m/Y') }}</p>
 
                                 <div class="pb-3">
                                     <a href="{{ route('announcements.show', compact('announcement')) }}"
