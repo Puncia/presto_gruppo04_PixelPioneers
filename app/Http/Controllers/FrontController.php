@@ -17,13 +17,25 @@ class FrontController extends Controller
 
     public function categoryShow(Category $category)
     {
-        $announcements = $category->announcements()->orderByDesc('created_at')->paginate(10);
+        $announcements = $category->announcements()->where('is_accepted', true)->orderByDesc('created_at')->paginate(12);
+
+        if ($announcements->currentPage() === 1 && $announcements->count() < 12) {
+            $extraAnnouncement = Announcement::orderByDesc('created_at')
+                ->skip($announcements->count())
+                ->first();
+
+            if ($extraAnnouncement) {
+                $announcements->push($extraAnnouncement);
+            }
+        }
+
         return view('categoryShow', compact('announcements', 'category'));
     }
+
     //ricerca annunci
     public function searchAnnouncements(Request $request)
     {
-        $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
+        $announcements = Announcement::search($request->searched)->orderBy('created_at', 'desc')->where('is_accepted', true)->paginate(10);
         return view('announcements.index', compact('announcements'));
     }
 
