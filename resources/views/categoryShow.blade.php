@@ -4,31 +4,53 @@
             <div class="row text-center m-5">
                 <h1 class="fs-1 f1 ">{{ $category->name }}</h1>
             </div>
-            @forelse ($announcements as $announcement)
-                @if (@isset($announcement->is_accepted))
-                    <div class="col-12 col-md-3 my-5 d-flex justify-content-center">
-                        <div class="card shadow" style="width: 18rem;">
-                            <img src="{{ !$announcement->images()->get()->isEmpty()? $announcement->images()->first()->getUrl(400, 300): asset('images/placeholder.png') }}"
-                                class="cardcustom immagine">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $announcement->title }}</h5>
-                                <p class="card-text">{{ $announcement->body }}</p>
-                                <a href="{{ route('announcements.show', compact('announcement')) }}"
-                                    class="btn btn-primary shadow">Visualizza</a>
-                                <p class="card-footer my-2">Pubblicato il:
-                                    {{ $announcement->created_at->format('d/m/Y') }}
-                                    Autore: {{ $announcement->user->name ?? '' }}</p>
+            <div class="row d-flex">
+                @forelse ($announcements as $announcement)
+                    @if (@isset($announcement->is_accepted))
+                        <div class="col-12 col-md-3 my-5 d-flex justify-content-center">
+                            <div class="cardbordo col-12 col-md-4 card shadow" style="width: 18rem;">
+                                <div id="carouselExample" class="carousel slide">
+                                    @if (!$announcement->images()->get()->isEmpty())
+                                        <div>
+                                            <img src="{{ $announcement->images()->first()->getUrl(400, 300) }}"
+                                                class="immagine rounded" />
+                                        </div>
+                                    @else
+                                        <div>
+                                            <img src="{{ asset('images/placeholder.png') }}" class="immagine rounded" />
+                                        </div>
+                                    @endif
+
+                                    <h5 class="card-title fs-5 px-3 pt-2">
+                                        {{ $announcement->title }}</h5>
+                                    <p class="card-text f1 px-3 fs-6 pt-2">
+                                        {{ trim(substr($announcement->body, 0, 30)) . '...' }}
+                                    </p>
+                                    <div class=" my-auto price-review">
+                                        <span class="ps-3 f2 align-self-center">€
+                                            {{ $announcement->price }} </span>
+                                    </div>
+                                    <p class="created-by ps-3 f2 text-secondary pt-2">Creato da
+                                        {{ $announcement->user->name }}
+                                        {{ $announcement->created_at->format('l d/m/Y') }}</p>
+
+                                    <div class="pb-3">
+                                        <a href="{{ route('announcements.show', compact('announcement')) }}"
+                                            class="justify-content btncard text-light pb-2">{{ __('ui.Show') }}</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    @endif
+                @empty
+                    <div class="col-12">
+                        <p class="h1">Non sono presenti annunci per questa categoria</p>
+                        <p class="h2">Pubblicane uno: <a href="{{ route('announcements.create') }}"
+                                class="btn btn-success shadow">Nuovo Annuncio</a></p>
                     </div>
-                @endif
-            @empty
-                <div class="col-12">
-                    <p class="h1">Non sono presenti annunci per questa categoria</p>
-                    <p class="h2">Pubblicane uno: <a href="{{ route('announcements.create') }}"
-                            class="btn btn-success shadow">Nuovo Annuncio</a></p>
-                </div>
-            @endforelse
+                @endforelse
+            </div>
+            {{ $announcements->links() }}
         </div>
     </div>
 </x-layout>

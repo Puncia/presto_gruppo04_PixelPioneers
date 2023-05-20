@@ -6,59 +6,44 @@
                 <div class="product-imgs">
                     <div class="img-display">
                         <div class="img-showcase">
-                            <img class="detailimg" src="https://picsum.photos/400/300" alt="product image">
-                            <img class="detailimg" src="https://picsum.photos/400/300" alt="product image">
-                            <img class="detailimg" src="https://picsum.photos/400/300" alt="product image">
-                            <img class="detailimg" src="https://picsum.photos/400/300" alt="product image">
+                            @forelse($announcement->images as $image)
+                                <img class="detailimg" src="{{ $image->getUrl(400, 300) }}">
+
+                            @empty
+                                <img class="detailimg w-75 ps-5" src={{ asset('images/placeholder.png') }}>
+                            @endforelse
                         </div>
                     </div>
                     <div class="img-select">
-                        <div class="img-item">
-                            <a href="#" data-id="1">
-                                <img class="detailimg" src="https://picsum.photos/400/300" alt="product image">
-                            </a>
-                        </div>
-                        <div class="img-item">
-                            <a href="#" data-id="2">
-                                <img class="detailimg" src="https://picsum.photos/400/300" alt="product image">
-                            </a>
-                        </div>
-                        <div class="img-item">
-                            <a href="#" data-id="3">
-                                <img class="detailimg" src="https://picsum.photos/400/300" alt="product image">
-                            </a>
-                        </div>
-                        <div class="img-item">
-                            <a href="#" data-id="4">
-                                <img class="detailimg" src="https://picsum.photos/400/300" alt="product image">
-                            </a>
-                        </div>
+                        @forelse($announcement->images as $i=>$image)
+                            <div class="img-item">
+                                <a href="#" data-id="{{ $i + 1 }}">
+                                    <img class="detailimg" src="{{ $image->getUrl(400, 300) }}">
+                                </a>
+                            </div>
+                        @empty
+                        @endforelse
                     </div>
                 </div>
             </div>
             <div class="col-6">
                 <div class="product-content">
-                    <h2 class="f1 product-title">Titolo</h2>
-                    <a href="#" class="product-link f1">Categoria</a>
-                    <div class="f2">Pubblicato il </div>
-                    <div class="f2"><span>Creato da </span></div>
-
+                    <h2 class="f1 product-title">{{ $announcement->title }}</h2>
+                    <div class="product-link f1">{{ $announcement->category->name }}</div>
+                    <div class="f2">Pubblicato {{ $announcement->created_at->format('l d/m/Y') }}</div>
+                    <div class="f2"><span>Creato da
+                            {{ $announcement->user->name ?? '' }}</span>
+                    </div>
 
                     <div class="product-price f1">
-                        <p class="price"><span>€</span></p>
+                        <p class="price"><span>{{ $announcement->price }} €</span></p>
                     </div>
 
                     <div class="product-detail mb-5 f2">
+                        <p>
+                            {{ $announcement->body }}
+                        </p>
 
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga
-                            tenetur
-                            placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius.
-                            Dignissimos, labore suscipit. Unde.</p>
-                        <ul class="pt-3">
-                            <li>Area di consegna: <span>Tutto il mondo!</span></li>
-                            <li>Costo di spedizione: <span>Gratis!</span></li>
-                        </ul>
                     </div>
 
                     <div class="purchase-info">
@@ -66,6 +51,9 @@
                         <button type="button" class="btn">
                             Acquista <i class="fas fa-shopping-cart"></i>
                         </button>
+                        <div>
+                            <p class="text-secondary pt-3">Consegna senza costi aggiuntivi</p>
+                        </div>
 
                     </div>
                 </div>

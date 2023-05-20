@@ -7,41 +7,42 @@
                 @if (@isset($announcement->is_accepted))
                     <div class="col-12 col-md-3 my-5 d-flex justify-content-center">
                         <div class="cardbordo col-12 col-md-4 card shadow" style="width: 18rem;">
-
-                            {{-- inizio carosello --}}
-
                             <div id="carouselExample" class="carousel slide">
-                                <div class="carousel-inner">
-                                    @forelse ($announcement->images as $image)
-                                        <div class="carousel-item @if ($loop->first) active @endif">
-                                            <img src="{{ !$image->get()->isEmpty() ? $image->getUrl(400, 300) : asset('images/placeholder.png') }}"
-                                                class="cardcustom immagine">
-                                        </div>
-                                    @empty
-                                        <img src="{{ asset('images/placeholder.png') }}">
-                                    @endforelse
+                                @if (!$announcement->images()->get()->isEmpty())
+                                    <div>
+                                        <img src="{{ $announcement->images()->first()->getUrl(400, 300) }}"
+                                            class="immagine rounded" />
+                                    </div>
+                                @else
+                                    <div>
+                                        <img src="{{ asset('images/placeholder.png') }}" class="immagine rounded" />
+                                    </div>
+                                @endif
+
+                                <h5 class="card-title fs-5 px-3 pt-2">
+                                    {{ $announcement->title }}</h5>
+                                <p class="card-text f1 px-3 fs-6 pt-2">
+                                    {{ trim(substr($announcement->body, 0, 30)) . '...' }}
+                                </p>
+                                <div class=" my-auto price-review">
+                                    <span class="ps-3 f2 align-self-center">€
+                                        {{ $announcement->price }} </span>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                                    data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
+                                <div class="pt-2">
+                                    <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
+                                        class="text-secondary text-decoration-none card-text f1 px-3 fs-6 pt-2">
+                                        {{ $announcement->category->name }} <i class="bi bi-box-arrow-up-right"></i>
+                                    </a>
+                                </div>
+                                <p class="created-by ps-3 f2 text-secondary pt-2">Creato da
+                                    {{ $announcement->user->name }}
+                                    {{ $announcement->created_at->format('l d/m/Y') }}</p>
 
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                                    data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
+                                <div class="pb-3">
+                                    <a href="{{ route('announcements.show', compact('announcement')) }}"
+                                        class="justify-content btncard text-light pb-2">{{ __('ui.Show') }}</a>
+                                </div>
                             </div>
-                            <h5 class="card-title f2 fw-bold fs-3 px-3 pt-2">
-                                {{ $announcement->title }}</h5>
-                            <p class="card-text f1 px-3 fs-5 pt-2"> {{ $announcement->body }}</p>
-
-                            <p class=" ps-3 f2 pt-2">Creato da
-                                {{ $announcement->user->name ?? '' }} </p>
-                            <p class=" ps-3 text-secondary mt-3 f2">
-                                {{ $announcement->created_at->format('l d/m/Y') }}
-                            </p>
                         </div>
                     </div>
                 @endif

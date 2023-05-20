@@ -30,10 +30,11 @@
                             aria-expanded="false">
                             {{ __('ui.Categorie') }}
                         </button>
+
                         <ul class=" dropdown-menu">
                             @foreach ($categories as $category)
                                 <li><a class="dropdown-item"
-                                        href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}</a>
+                                        href="{{ route('categoryShow', compact('category')) }}">{{ $category->getCategoryLocale() }}</a>
                                 </li>
                             @endforeach
                         </ul>

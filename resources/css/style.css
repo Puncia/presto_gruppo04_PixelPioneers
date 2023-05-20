@@ -249,6 +249,14 @@ body {
   padding: 10px;
 }
 
+.price-review {
+  background-color: #eaeef2;
+}
+
+.created-by {
+  font-size: 15px;
+}
+
 /* pagina dettaglio */
 
 /* .card-wrapper{
@@ -256,48 +264,48 @@ body {
   margin: 0 auto;
 } */
 
-.detailimg{
+.detailimg {
   width: 100%;
   display: block;
 }
 
-.img-display{
+.img-display {
   overflow: hidden;
 }
 
-.img-showcase{
+.img-showcase {
   display: flex;
   width: 100%;
   transition: all 0.5s ease;
 }
 
-.img-showcase .detailimg{
-  min-width: 100%;
+.img-showcase .detailimg {
+  min-width: 50%;
 }
 
-.img-select{
+.img-select {
   display: flex;
 }
 
-.img-item{
+.img-item {
   margin: 0.3rem;
 }
 
 .img-item:nth-child(1),
 .img-item:nth-child(2),
-.img-item:nth-child(3){
+.img-item:nth-child(3) {
   margin-right: 0;
 }
 
-.img-item:hover{
+.img-item:hover {
   opacity: 0.8;
 }
 
-.product-content{
+.product-content {
   padding: 20px;
 }
 
-.product-title{
+.product-title {
   font-size: 50px;
   text-transform: capitalize;
   font-weight: 700;
@@ -307,7 +315,7 @@ body {
   top: 10%;
 }
 
-.product-title::after{
+.product-title::after {
   content: "";
   position: absolute;
   left: 0;
@@ -317,7 +325,7 @@ body {
   background: #4d5382;
 }
 
-.product-link{
+.product-link {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 400;
@@ -330,44 +338,44 @@ body {
   transition: all 0.5s ease;
 }
 
-.product-link:hover{
+.product-link:hover {
   opacity: 0.9;
 }
 
 
-.product-price{
+.product-price {
   margin: 15px 0px;
   font-size: 20px;
   font-weight: 700;
 }
 
-.product-price span{
+.product-price span {
   font-weight: 400;
 }
 
 
-.price span{
+.price span {
   color: #4D5382;
   font-size: 20px;
 }
 
-.product-detail h2{
+.product-detail h2 {
   color: #12263a;
   padding-bottom: 10px;
 }
 
-.product-detail p{
+.product-detail p {
   font-size: 20px;
   padding: 5px;
   opacity: 0.8;
 }
 
-.product-detail ul{
+.product-detail ul {
   margin: 10px 0;
   font-size: 0.9rem;
 }
 
-.product-detail ul li{
+.product-detail ul li {
   margin: 0;
   list-style: none;
   background-size: 18px;
@@ -378,16 +386,16 @@ body {
   font-size: 20px;
 }
 
-.product-detail ul li span{
+.product-detail ul li span {
   font-weight: 400;
 }
 
-.purchase-info{
+.purchase-info {
   margin: 20px 0;
 }
 
 .purchase-info input,
-.purchase-info .btn{
+.purchase-info .btn {
   border: 1.5px solid #ddd;
   border-radius: 25px;
   text-align: center;
@@ -397,33 +405,33 @@ body {
   margin-bottom: 2px;
 }
 
-.purchase-info input{
+.purchase-info input {
   width: 60px;
 }
 
-.purchase-info .btn{
+.purchase-info .btn {
   cursor: pointer;
   color: #fff;
 }
 
-.purchase-info .btn:first-of-type{
+.purchase-info .btn:first-of-type {
   background: #4d5382;
 }
 
-.purchase-info .btn:last-of-type{
+.purchase-info .btn:last-of-type {
   background: #4d5382;
 }
 
-.purchase-info .btn:hover{
+.purchase-info .btn:hover {
   opacity: 0.9;
 }
 
-.social-links{
+.social-links {
   display: flex;
   align-items: center;
 }
 
-.social-links a{
+.social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -438,33 +446,34 @@ body {
   transition: all 0.5s ease;
 }
 
-.social-links a:hover{
+.social-links a:hover {
   background: #4d5382;
   border-color: transparent;
   color: #fff;
 }
 
-@media screen and (min-width: 992px){
-  .card{
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 1.5rem;
+/* 
+@media screen and (min-width: 992px) {
+  .card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
   }
 
-  .card-wrapper{
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  .card-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .product-imgs{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+  .product-imgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .product-content{
-      padding-top: 0;
+  .product-content {
+    padding-top: 0;
   }
-}
+} */
