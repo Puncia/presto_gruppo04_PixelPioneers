@@ -113,6 +113,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #EEF8FF;
+  overflow-x: hidden;
 }
 
 
@@ -198,7 +199,7 @@ body {
 }
 
 .googleRatingField {
-  border: #D6E0E8 5px solid;
+  border: #c9d0d4 5px solid;
   background-color: #E7F0F7;
   border-radius: 3px;
   color: black;
@@ -238,4 +239,12 @@ body {
   cursor: pointer;
   text-decoration: none;
 
+}
+
+.img-review {
+  border: 2px solid rgba(0, 0, 0, 0.219);
+  border-radius: 6px;
+  background-color: #6168a010;
+  margin: 10px;
+  padding: 10px;
 }
