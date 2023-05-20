@@ -26,9 +26,9 @@
     @if ($announcement_to_check)
         @forelse($announcement_to_check->images as $i=>$image)
             <div class="row justify-content-center">
-                <div class="col-8">
+                <div class="col-12 col-md-8">
                     <div class="row justify-content-between img-review">
-                        <div class="col-5">
+                        <div class="col-12 col-md-5">
                             <div class="col-8">
                                 <h5 class="text-secondary">Immagine {{ $i + 1 }}</h2>
                             </div>
@@ -72,7 +72,7 @@
             </div>
         @empty
             <div class=" img-review">
-                <div class="col-6">
+                <div class="col-12 text-center">
                     Questo annuncio non ha immagini.
                 </div>
             </div>

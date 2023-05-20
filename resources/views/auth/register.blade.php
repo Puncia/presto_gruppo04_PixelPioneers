@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid my-5">
-        <div class="row">
-            <div class="col-6">
+        <div class="row justify-content-center ">
+            <div class="col-12 col-md-6">
 
 
                 <h1 class="text-center f1">Registrati</h1>
@@ -21,7 +21,7 @@
                         <form method='POST' action={{ route('register') }}>
                             @csrf
                             <div class="mb-3">
-                                <img width="30" height="30" src="https://img.icons8.com/ios/50/username.png" 
+                                <img width="30" height="30" src="https://img.icons8.com/ios/50/username.png"> 
                                 <label for="exampleInputEmail1" class="mb-3 form-label text_shadow">Username</label>
                                 <input type="text" class="form-control shadow " id="exampleInputEmail1" name="name">
 

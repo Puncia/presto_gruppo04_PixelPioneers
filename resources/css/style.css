@@ -136,11 +136,14 @@ body {
 }
 
 .img-preview {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 
 .carIndex {
   width: 400px;
@@ -245,9 +248,11 @@ body {
   border: 2px solid rgba(0, 0, 0, 0.219);
   border-radius: 6px;
   background-color: #6168a010;
-  margin: 10px;
-  padding: 10px;
+  margin: 50px;
+  padding: 50px;
 }
+
+
 
 .price-review {
   background-color: #eaeef2;
@@ -452,28 +457,34 @@ body {
   color: #fff;
 }
 
-/* 
-@media screen and (min-width: 992px) {
-  .card {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1.5rem;
-  }
 
-  .card-wrapper {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+@media screen and (max-width: 992px) {
+  
+  .img-review {
+  border: 2px solid rgba(0, 0, 0, 0.219);
+  border-radius: 6px;
+  background-color: #6168a010;
+  margin: 10px;
+  padding: 10px;
+}
 
-  .product-imgs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.img-preview-det {
+  width: 100%;
+  height: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 50px;
+  padding-bottom: 200px;
+}
 
-  .product-content {
-    padding-top: 0;
-  }
-} */
+#drop_nav{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.form_custom{
+  padding-right: 50px;
+}
+
+}

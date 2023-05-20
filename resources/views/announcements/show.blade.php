@@ -1,9 +1,9 @@
 <x-layout>
 
-    <div class="img-review py-4">
-        <div class="row">
-            <div class="col-6">
-                <div class="product-imgs">
+    <div class=" img-review py-4 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 me-5 ">
+                <div class="product-imgs img-preview-det">
                     <div class="img-display">
                         <div class="img-showcase">
                             @forelse($announcement->images as $image)
@@ -26,7 +26,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-4">
                 <div class="product-content">
                     <h2 class="f1 product-title">{{ $announcement->title }}</h2>
                     <div class="product-link f1">{{ $announcement->category->name }}</div>

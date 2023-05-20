@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid my-5">
-        <div class="row">
-            <div class="col-6 col-md-6">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
                 <h1 class="text-center f1">Sei su Presto.it</h1>
                 <p class="text-center f2 text_shadow tx-sec py-2 border-2 border-white border-bottom">Benvenuto, accedi qui:</p>
                     <div class="row justify-content-center">
