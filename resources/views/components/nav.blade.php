@@ -22,17 +22,17 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link nav-custom" href="">{{ __('ui.Saluta') }} {{ Auth::user()->name }}<img
-                                width="25" height="25" src="https://img.icons8.com/ios/50/salute.png"
-                                alt="salute" /></a>
+                        <a class="nav-link nav-custom" href="">{{ __('ui.Saluta') }} {{ Auth::user()->name }}
+                            <img class"mt-5 pt-5" width="25" height="25"
+                                src="https://img.icons8.com/ultraviolet/40/so-so.png" alt="salute" /></a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-custom nav-link" href="{{ route('announcements.index') }}">{{ __('ui.TAnn') }}</a>
                     </li>
-                    <div  class="dropdown">
-                        <button id="drop_nav"  class="nav-custom btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                    <div class="dropdown">
+                        <button id="drop_nav" class="nav-custom btn dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             {{ __('ui.Categorie') }}
                         </button>
 
@@ -46,7 +46,7 @@
                     </div>
                     @if (Auth::user()->is_revisor)
                         <li class="nav-item">
-                            <a  class="nav-custom nav-link btn btn-outline-success btn-sm position-relative"
+                            <a class="nav-custom nav-link btn btn-outline-success btn-sm position-relative"
                                 aria-current="page" href="{{ route('revisor.index') }}">{{ __('ui.ZR') }}
                                 <span
                                     class="position-absolute top-0 start-100 translate-middle badge
@@ -59,8 +59,7 @@
                         </li>
                     @endif
                     <li class="nav-item">
-                        <a class="nav-custom nav-link"
-                            href="{{ route('announcements.create') }}">{{ __('ui.PAnn') }}</a>
+                        <a class="nav-custom nav-link" href="{{ route('announcements.create') }}">{{ __('ui.PAnn') }}</a>
                     </li>
                     <a class="nav-custom nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault(); 
@@ -71,7 +70,7 @@
                 @endguest
             </ul>
             <div class="dropdown p-0 ">
-                <button  id="drop_nav" class="btn dropdown-toggle  nav-custom" type="button" data-bs-toggle="dropdown"
+                <button id="drop_nav" class="btn dropdown-toggle  nav-custom" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     {{ __('ui.Lingua') }}
                 </button>
@@ -95,8 +94,8 @@
                     <button class="ms-1 btn btn_custom text-light" type="submit">{{ __('ui.Search') }}</button>
                 </form>
             </div>
-        
-            
+
+
         </div>
     </div>
 

@@ -31,6 +31,16 @@
   opacity: 0.8;
 }
 
+
+body {
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #EEF8FF;
+  overflow-x: hidden;
+}
+
 /* animazione bottoni tranne card home */
 
 .btn_custom {
@@ -82,6 +92,7 @@
 
 
 
+/* colore sfondo navbar */
 
 .bg_blu {
 
@@ -101,21 +112,7 @@
 
   box-shadow: 10px 10px 5px lightgrey;
 
-
 }
-
-
-
-
-body {
-
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #EEF8FF;
-  overflow-x: hidden;
-}
-
 
 
 #nav {
@@ -459,32 +456,32 @@ body {
 
 
 @media screen and (max-width: 992px) {
-  
+
   .img-review {
-  border: 2px solid rgba(0, 0, 0, 0.219);
-  border-radius: 6px;
-  background-color: #6168a010;
-  margin: 10px;
-  padding: 10px;
-}
+    border: 2px solid rgba(0, 0, 0, 0.219);
+    border-radius: 6px;
+    background-color: #6168a010;
+    margin: 10px;
+    padding: 10px;
+  }
 
-.img-preview-det {
-  width: 100%;
-  height: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-left: 50px;
-  padding-bottom: 200px;
-}
+  .img-preview-det {
+    width: 100%;
+    height: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 50px;
+    padding-bottom: 200px;
+  }
 
-#drop_nav{
-  padding-left: 0px;
-  padding-right: 0px;
-}
+  #drop_nav {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 
-.form_custom{
-  padding-right: 50px;
-}
+  .form_custom {
+    padding-right: 50px;
+  }
 
 }
