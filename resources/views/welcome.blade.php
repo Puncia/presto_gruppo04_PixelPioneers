@@ -70,14 +70,14 @@
                                     <p>{{ $announcement->body }}</p>
                                     <p>{{ $announcement->price }}€</p>
                                     <a href="{{ route('announcements.show', compact('announcement')) }}"
-                                        class="justify-content btncard text-light">{{__('ui.Show')}}</a>
+                                        class="justify-content btncard text-light">{{ __('ui.Show') }}</a>
                                     <a href=""
-                                        class="my-2 border-top pt-2 border-dark shadow btncard text-light">{{__('ui.Categorie')}}
-                                        {{ $announcement->category->name }}</a> 
-                                        {{-- chiedere come cambiare le categorie!! --}}
-                                    <p>{{__('ui.Public')}}
+                                        class="my-2 border-top pt-2 border-dark shadow btncard text-light">{{ __('ui.Categoria') }}
+                                        {{ $announcement->category->getCategoryLocale() }}</a>
+                                    {{-- chiedere come cambiare le categorie!! --}}
+                                    <p>{{ __('ui.Public') }}
                                         {{ $announcement->created_at->format('d/m/Y') }}
-                                        {{__('ui.Autore')}} {{ $announcement->user->name ?? '' }}
+                                        {{ __('ui.Autore') }} {{ $announcement->user->name ?? '' }}
                                     </p>
                                 </div>
                                 <div class="left-side"></div>
