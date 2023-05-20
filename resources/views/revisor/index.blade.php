@@ -61,14 +61,21 @@
                         {{-- Labels --}}
                         <div class="col-md-3 text-center">
                             <h5 class="tc-accent border-bottom border-2 pb-1 text-center">Google labels</h5>
-                            @for ($i = 0; $i < 4; $i++)
-                                <p class="rounded-5 googleLabels text-center ">{{ $image->labels[$i] }}</p>
-                            @endfor
+                            @if ($image->labels != null)
+                                @for ($i = 0; $i < 4; $i++)
+                                    <p class="rounded-5 googleLabels text-center ">{{ $image->labels[$i] }}</p>
+                                @endfor
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
         @empty
+            <div class=" img-review">
+                <div class="col-6">
+                    Questo annuncio non ha immagini.
+                </div>
+            </div>
         @endforelse
         <div class="d-flex justify-content-end my-3 py-3">
             bottone accetta

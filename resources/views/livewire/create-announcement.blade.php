@@ -47,7 +47,7 @@
 
                             <div class="mb-3">
                                 <label for="title">Prezzo</label>
-                                <input wire:model="price" type="text"
+                                <input wire:model="price" type="number"
                                     class="mb-3 form-control @error('title') is-invalid @enderror">
                                 <div class="text-danger">
                                     @error('price')
