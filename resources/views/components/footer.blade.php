@@ -1,4 +1,4 @@
-<div class="container-fluid tot text-light" id="nav">
+<div class="container-fluid justify-content-between tot text-light" id="nav">
     {{-- DX --}}
     <div class="row py-2">
         <div class="col-12 col-md-4 text-center">

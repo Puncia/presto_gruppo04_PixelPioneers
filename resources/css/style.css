@@ -250,10 +250,11 @@ body {
 }
 
 /* pagina dettaglio */
-.card-wrapper{
-  max-width: 1900px;
+
+/* .card-wrapper{
+  max-width: 1200px;
   margin: 0 auto;
-}
+} */
 
 .detailimg{
   width: 100%;
@@ -303,6 +304,7 @@ body {
   position: relative;
   color: #12263a;
   margin: 20px 0;
+  top: 10%;
 }
 
 .product-title::after{

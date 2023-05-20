@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="container-fluid my-5">
-        <h1 class="border-bottom text-center">
+    <div class="container-fluid my-5 text-center">
+        <h1 class="border-bottom">
             {{ $announcement_to_check ? 'Revisione annunci' : 'Non ci sono annunci da revisionare' }}
         </h1>
     </div>
@@ -62,7 +62,7 @@
                         <div class="col-md-3 text-center">
                             <h5 class="tc-accent border-bottom border-2 pb-1 text-center">Google labels</h5>
                             @if ($image->labels != null)
-                                @for ($i = 0; $i < 4; $i++)
+                                @for ($i = 0; $i < 5; $i++)
                                     <p class="rounded-5 googleLabels text-center ">{{ $image->labels[$i] }}</p>
                                 @endfor
                             @endif
@@ -77,21 +77,23 @@
                 </div>
             </div>
         @endforelse
-        <div class="d-flex justify-content-end my-3 py-3">
-            bottone accetta
-            <form action="{{ route('revisor.accept_announcement', ['announcement' => $announcement_to_check]) }}"
-                method="POST">
-                @csrf
-                @method('PATCH')
-                <button class="btn_custom btn text-light" type="submit">Accetta</button>
-            </form>
-            bottone rifiuta
-            <form action="{{ route('revisor.reject_announcement', ['announcement' => $announcement_to_check]) }}"
-                method="POST">
-                @csrf
-                @method('PATCH')
-                <button class="btn_custom btn text-light mx-5" type="submit">Rifiuta</button>
-            </form>
+        <div class="col-12">
+            <div class="ps-4 d-flex justify-content-center my-3 py-3">
+                {{-- bottone accetta --}}
+                <form action="{{ route('revisor.accept_announcement', ['announcement' => $announcement_to_check]) }}"
+                    method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button class="btn_custom btn text-light" type="submit">Accetta</button>
+                </form>
+                {{-- bottone rifiuta --}}
+                <form action="{{ route('revisor.reject_announcement', ['announcement' => $announcement_to_check]) }}"
+                    method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button class="btn_custom btn text-light mx-5" type="submit">Rifiuta</button>
+                </form>
+            </div>
         </div>
     @endif
     </div>
