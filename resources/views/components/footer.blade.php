@@ -26,7 +26,7 @@
 
                 <a href="{{ route('become.revisor') }}"class="f1 text-decoration-none text-light pb-4 mb-1">{{__('ui.buttom')}}</a>
             </div>
-            <div class="f1 fs-6 text-center">© 2023 Presto.it - {{__('ui.Privacy')}}</div>
+            <div class="f1 fs-6 text-center pb-2">© 2023 Presto.it - {{__('ui.Privacy')}}</div>
         </div>
         {{-- SX --}}
         <div class="col-12 col-md-4">
