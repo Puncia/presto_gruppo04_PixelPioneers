@@ -2,7 +2,7 @@
 return [
     'Welcome' => 'Bienvenido a nuestro e-commerce',
     'Titolo1' => '¡Aproveche la oportunidad que siempre ha buscado!',
-    'Titolo2' => 'Entradas más recientes:',
+    'Titolo2' => 'Entradas más recientes',
     'Accedi' => 'Acceso',
     'Registrati' => 'Iniciar sesión',
     'Saluta' => 'Hola, ',
@@ -34,7 +34,7 @@ return [
     'TB' => 'Categorías: Teléfonos',
     'AB' => 'Categorías: Muebles',
     'Public' => 'Publicado en: ',
-    'Autore' => 'Autor',
+    'Autore' => 'de ',
     'LVN' => '¿Quieres trabajar con nosotros?',
     'RegOra' => 'Regístrate ahora para convertirte en revisor:',
     'buttom' => 'Haz clic aquí',

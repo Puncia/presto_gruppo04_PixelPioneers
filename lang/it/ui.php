@@ -2,7 +2,7 @@
 return [
     'Welcome' => 'Benvenuto nel nostro e-commerce ',
     'Titolo1' => "Cogli l'opportunità che hai sempre cercato ",
-    'Titolo2' => 'Ultimi inseriti: ',
+    'Titolo2' => 'Ultimi inseriti ',
     'Accedi' => 'Accedi',
     'Registrati' => 'Registrati',
     'Saluta' => 'Ciao, ',
@@ -34,7 +34,7 @@ return [
     'TB' => 'Categoria: Telefonia',
     'AB' => 'Categoria: Arredamento',
     'Public' => 'Pubblicato il ',
-    'Autore' => 'Autore ',
+    'Autore' => 'da ',
     'LVN' => 'Vuoi lavorare con noi?',
     'RegOra' => 'Registrati subito per diventare un revisor',
     'buttom' => 'Clicca qui',

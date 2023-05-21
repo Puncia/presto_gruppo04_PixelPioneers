@@ -67,11 +67,12 @@
                                 </div>
                                 <div class="cardcustom flip-card-back f1 pt-4 text-center">
                                     <h5>{{ $announcement->title }}</h5>
-                                    <p>{{ $announcement->body }}</p>
+                                    <p>{{ strlen($announcement->body) > 30 ? trim(substr($announcement->body, 0, 30)) . '...' : $announcement->body }}
+                                    </p>
                                     <p>{{ $announcement->price }}€</p>
                                     <a href="{{ route('announcements.show', compact('announcement')) }}"
                                         class="justify-content btncard text-light">{{ __('ui.Show') }}</a>
-                                    <a href=""
+                                    <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"
                                         class="my-2 border-top pt-2 border-dark shadow btncard text-light">{{ __('ui.Categoria') }}
                                         {{ $announcement->category->getCategoryLocale() }}</a>
                                     {{-- chiedere come cambiare le categorie!! --}}

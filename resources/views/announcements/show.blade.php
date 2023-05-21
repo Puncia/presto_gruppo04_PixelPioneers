@@ -16,11 +16,13 @@
                     </div>
                     <div class="img-select">
                         @forelse($announcement->images as $i=>$image)
-                            <div class="img-item">
-                                <a href="#" data-id="{{ $i + 1 }}">
-                                    <img class="detailimg" src="{{ $image->getUrl(400, 300) }}">
-                                </a>
-                            </div>
+                            @if (count($announcement->images) > 1)
+                                <div class="img-item">
+                                    <a href="#" data-id="{{ $i + 1 }}">
+                                        <img class="detailimg" src="{{ $image->getUrl(400, 300) }}">
+                                    </a>
+                                </div>
+                            @endif
                         @empty
                         @endforelse
                     </div>
@@ -29,7 +31,8 @@
             <div class="col-12 col-md-4">
                 <div class="product-content">
                     <h2 class="f1 product-title">{{ $announcement->title }}</h2>
-                    <a href="{{ route('categoryShow', ['category' => $announcement->category]) }}"class="product-link f1">{{ $announcement->category->name }}</a>
+                    <a
+                        href="{{ route('categoryShow', ['category' => $announcement->category]) }}"class="product-link f1">{{ $announcement->category->name }}</a>
                     <div class="f2">Pubblicato il {{ $announcement->created_at->format('d/m/Y') }}</div>
                     <div class="f2"><span>Creato da
                             {{ $announcement->user->name ?? '' }}</span>

@@ -2,7 +2,7 @@
 return [
     'Welcome' => 'Welcome to our e-commerce',
     'Titolo1' => 'Take the opportunity you always searched for!',
-    'Titolo2' => 'The last posted:',
+    'Titolo2' => 'Last announcements',
     'Accedi' => 'Log in',
     'Registrati' => 'Sign up',
     'Saluta' => 'Hello, ',
@@ -34,7 +34,7 @@ return [
     'TB' => 'Category: Smartphone',
     'AB' => 'Category: Furniture',
     'Public' => 'Published on: ',
-    'Autore' => 'Author',
+    'Autore' => 'by',
     'LVN' => 'Do you want to work with us?',
     'RegOra' => 'Register now to become a reviewer:',
     'buttom' => 'Click here',

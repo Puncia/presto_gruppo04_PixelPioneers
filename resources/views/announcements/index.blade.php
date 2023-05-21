@@ -22,7 +22,7 @@
                                 <h5 class="card-title fs-5 px-3 pt-2">
                                     {{ $announcement->title }}</h5>
                                 <p class="card-text f1 px-3 fs-6 pt-2">
-                                    {{ trim(substr($announcement->body, 0, 30)) . '...' }}
+                                    {{ strlen($announcement->body) > 30 ? trim(substr($announcement->body, 0, 30)) . '...' : $announcement->body }}
                                 </p>
                                 <div class=" my-auto price-review">
                                     <span class="ps-3 f2 align-self-center">€
