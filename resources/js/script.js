@@ -1,3 +1,5 @@
+// carosello home
+
 var swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
   grabCursor: true,
@@ -16,6 +18,7 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 //carosello pagina dettaglio
+
 const imgs = document.querySelectorAll('.img-select a');
 const imgBtns = [...imgs];
 let imgId = 1;
