@@ -66,7 +66,8 @@
                                         class="cardcustom immagine">
                                 </div>
                                 <div class="cardcustom flip-card-back f1 pt-4 text-center">
-                                    <h5>{{ $announcement->title }}</h5>
+                                    <h5>{{ strlen($announcement->title) > 35 ? trim(substr($announcement->title, 0, 35)) . '...' : $announcement->title }}
+                                    </h5>
                                     <p>{{ strlen($announcement->body) > 30 ? trim(substr($announcement->body, 0, 30)) . '...' : $announcement->body }}
                                     </p>
                                     <p>{{ $announcement->price }}€</p>
