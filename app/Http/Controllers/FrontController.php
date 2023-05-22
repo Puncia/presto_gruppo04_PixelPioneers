@@ -19,15 +19,15 @@ class FrontController extends Controller
     {
         $announcements = $category->announcements()->where('is_accepted', true)->orderByDesc('created_at')->paginate(12);
 
-        if ($announcements->currentPage() === 1 && $announcements->count() < 12) {
-            $extraAnnouncement = Announcement::orderByDesc('created_at')
-                ->skip($announcements->count())
-                ->first();
+        // if ($announcements->currentPage() === 1 && $announcements->count() < 12 && $announcements->count() > 1) {
+        //     $extraAnnouncement = Announcement::orderByDesc('created_at')
+        //         ->skip($announcements->count())
+        //         ->first();
 
-            if ($extraAnnouncement) {
-                $announcements->push($extraAnnouncement);
-            }
-        }
+        //     if ($extraAnnouncement) {
+        //         $announcements->push($extraAnnouncement);
+        //     }
+        // }
 
         return view('categoryShow', compact('announcements', 'category'));
     }
@@ -35,7 +35,7 @@ class FrontController extends Controller
     //ricerca annunci
     public function searchAnnouncements(Request $request)
     {
-        $announcements = Announcement::search($request->searched)->orderBy('created_at', 'desc')->where('is_accepted', true)->paginate(10);
+        $announcements = Announcement::search($request->searched)->orderBy('created_at', 'desc')->where('is_accepted', true)->paginate(12);
         return view('announcements.index', compact('announcements'));
     }
 
