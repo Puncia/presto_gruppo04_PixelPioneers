@@ -58,7 +58,7 @@
         <div class="container-fluid ">
             <div class="row justify-content-center">
                 @foreach ($announcements as $announcement)
-                    @if (@isset($announcement->is_accepted))
+                    @if ($announcement->is_accepted == 1)
                         <div class="cardcustom col-12 col-md-4 my-5 d-flex justify-content-evenly flip-card f1">
                             <div class="flip-card-inner f1">
                                 <div class="cardcustom flip-card-front f1">
