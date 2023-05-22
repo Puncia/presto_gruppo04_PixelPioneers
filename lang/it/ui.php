@@ -39,7 +39,7 @@ return [
     'RegOra' => 'Registrati subito per diventare un revisor',
     'buttom' => 'Clicca qui',
     'Pay' => 'Modalità di pagamento:',
-    'Privacy' => 'Tutti i diritti risevati',
+    'Privacy' => 'Tutti i diritti riservati',
     'Tel.' => 'Numero di telefono',
     'F&C' => 'Faq e contatti',
 ];

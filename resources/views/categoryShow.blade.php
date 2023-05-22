@@ -1,10 +1,10 @@
 <x-layout>
-    <div class="col-12">
+    <div class="col-8 col-md-12 container-fluid  justify-content-center">
         <div class="row">
-            <div class="row text-center m-5">
-                <h1 class="fs-1 f1 ">{{ $category->name }}</h1>
+            <div class="row text-center m-auto mt-5 ">
+                <h1 class="fs-1 f1 d-flex justify-content-center">{{ $category->name }}</h1>
             </div>
-            <div class="row d-flex">
+            <div class="row  m-auto">
                 @forelse ($announcements as $announcement)
                     @if (@isset($announcement->is_accepted))
                         <div class="col-12 col-md-3 my-5 d-flex justify-content-center">

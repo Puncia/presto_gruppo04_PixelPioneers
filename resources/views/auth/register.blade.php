@@ -5,7 +5,7 @@
 
 
                 <h1 class="text-center f1">Registrati</h1>
-                <p class="text-center f2 text_shadow tx-sec">Make your account to start buy in Italy:</p>
+                <p class="text-center f2 text_shadow tx-sec">Crea il tuo account per iniziare ad acquistare</p>
                 <div class="row justify-content-center">
                     <div class="col-8">
                         @if ($errors->any())

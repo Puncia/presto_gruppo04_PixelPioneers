@@ -1,4 +1,5 @@
 <x-layout>
+
     <div class="container-fluid my-5 text-center">
         <h1 class="border-bottom">
             {{ $announcement_to_check ? 'Revisione annunci' : 'Non ci sono annunci da revisionare' }}
@@ -145,4 +146,5 @@
         </div>
     @endif
     </div>
+    
 </x-layout>

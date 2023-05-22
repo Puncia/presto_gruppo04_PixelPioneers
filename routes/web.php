@@ -31,26 +31,26 @@ Route::get('/dettaglio/annuncio/{announcement}', [AnnouncementController::class,
 //Rotta per vedere tutti gli annunci
 Route::get('/tutti/annunci', [AnnouncementController::class, 'indexAnnouncement'])->name('announcements.index');
 
-// rotta Home revisore
+//Rotta Home revisore
 Route::get('/revisor/home', [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
 
-// Accetta annuncio
+//Accetta annuncio
 Route::patch('/accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->middleware('isRevisor')->name('revisor.accept_announcement');
 
-// rifiuta annuncio
+//Rifiuta annuncio
 Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->middleware('isRevisor')->name('revisor.reject_announcement');
 
-// Annulla annuncio approvato/rifiutato
+//Annulla annuncio approvato/rifiutato
 Route::post('/annulla/annuncio/{announcement}', [RevisorController::class, 'revertAnnouncement'])->middleware('isRevisor')->name('revisor.revert_announcement');
 
-//diventa revisore
+//Diventa revisore
 Route::get('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
 
-//rendere utente revisore
+//Rendere utente revisore
 Route::get('make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
-// Ricerca annuncio
+//Ricerca annuncio
 Route::get('/ricerca/annuncio', [FrontController::class, 'searchAnnouncements'])->name('announcements.search');
 
-// cambio lingua
+//Cambio lingua
 Route::post('/lingua/{lang}', [FrontController::class, 'setLanguage'])->name('set_language_locale');
