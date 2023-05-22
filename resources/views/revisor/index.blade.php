@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="col-lg-3 col-md-6 col-6 text-center">
                                         <h5 class="tc-accent border-bottom border-2 pb-1 text-center">Google labels</h5>
-                                        @if ($image->labels != null)
+                                        @if ($image->labels != null && count($image->labels) >= 5)
                                             @for ($i = 0; $i < 5; $i++)
                                                 <p class="rounded-5 googleLabels text-center ">{{ $image->labels[$i] }}
                                                 </p>
